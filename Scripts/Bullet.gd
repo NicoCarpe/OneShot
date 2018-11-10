@@ -1,9 +1,7 @@
 extends KinematicBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-var MOTION_SPEED = 50
+var MOTION_SPEED = 500
+var dropped = false
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -16,4 +14,18 @@ func _process(delta):
 #	pass
 	var movedir = Vector2(1,0).rotated(rotation)
 	var motion = movedir.normalized() * MOTION_SPEED
-	move_and_slide(motion)
+	var collision = move_and_collide(motion*delta)
+	
+	if collision:
+		if collision.collider.is_in_group("Enemy"):
+			dropped = true
+			#pass#TODO create dropped bullet
+		elif collision.collider.is_in_group("Player"):
+			pass
+		else:
+			dropped = true
+			#queue_free()
+		if dropped:
+			MOTION_SPEED = 0
+			collision_mask += 2
+			#collision_mask = Remove collision with enemy 
