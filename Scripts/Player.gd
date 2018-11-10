@@ -32,7 +32,7 @@ func _physics_process(delta):
 	#if playerControlEnabled:
 	controls_loop()
 	movement_loop()
-	speed_decay()
+#	speed_decay()
 	#CollisionNode.disabled = false # Reenable collision (Has to do with swap code)
 	#updateCamera()
 
@@ -122,33 +122,33 @@ func movement_loop():
 #	if anim != animNew:
 #		animNew = anim
 #		AnimNode.play(anim)
-	for i in range(get_slide_count()):
-		var collisions = get_slide_collision(i)
-		if collisions:	# Note: Causes a double hit bug where if you touch a projectile in the same frame it touches you,
-		# you get hit twice. This can be solved through invulnerability frames after being hit.
-			if collisions.collider.is_in_group("Projectile"):
-				var projectile = collisions.collider #The extra .get_node("./") doesn't seem to do anything, not sure why?
-				projectile.collide(self)
-			if collisions.collider.is_in_group("Pickup"):
-				var collider = collisions.collider.get_node("./")
-				collider.applyEffect(self)
-		pass
+#	for i in range(get_slide_count()):
+#		var collisions = get_slide_collision(i)
+#		if collisions:	# Note: Causes a double hit bug where if you touch a projectile in the same frame it touches you,
+#		# you get hit twice. This can be solved through invulnerability frames after being hit.
+#			if collisions.collider.is_in_group("Projectile"):
+#				var projectile = collisions.collider #The extra .get_node("./") doesn't seem to do anything, not sure why?
+#				projectile.collide(self)
+#			if collisions.collider.is_in_group("Pickup"):
+#				var collider = collisions.collider.get_node("./")
+#				collider.applyEffect(self)
+#		pass
 
-func speed_decay():
-	if MOTION_SPEED > NORMAL_SPEED:
-		#SpriteNode.set("modulate",Color(233.0/255,0,0,1)) # Used to test dash
-		MOTION_SPEED *= 0.90
+#func speed_decay():
+#	if MOTION_SPEED > NORMAL_SPEED:
+#		#SpriteNode.set("modulate",Color(233.0/255,0,0,1)) # Used to test dash
+#		MOTION_SPEED *= 0.90
 #		if MOTION_SPEED > minDashInvulnSpeed and MOTION_SPEED < maxDashInvulnSpeed:
 #			dashInvuln = true
 #			SpriteNode.set("modulate",Color(0,0,233.0/255,1)) # Used to test dash
 #		else:
 #			dashInvuln = false
 #			SpriteNode.set("modulate",Color(1,1,1,1))
-	elif MOTION_SPEED == NORMAL_SPEED:
-		pass
-	else:
-		#SpriteNode.set("modulate",Color(233.0/255,255,255,1))
-		MOTION_SPEED = NORMAL_SPEED
+#	elif MOTION_SPEED == NORMAL_SPEED:
+#		pass
+#	else:
+#		#SpriteNode.set("modulate",Color(233.0/255,255,255,1))
+#		MOTION_SPEED = NORMAL_SPEED
 
 #func dashDelay(sec):
 #	dashTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
