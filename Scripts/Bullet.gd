@@ -18,7 +18,7 @@ func _process(delta):
 	
 	if collision:
 		if collision.collider.is_in_group("Enemy"):
-			dropped = true
+			collision.collider.queue_free()
 			#pass#TODO create dropped bullet
 		elif collision.collider.is_in_group("Player"):
 			pass
