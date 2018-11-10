@@ -4,12 +4,11 @@
 [ext_resource path="res://Scenes/tileSet.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=3]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
-collision_layer = 15
-collision_mask = 15
+position = Vector2( -11.0264, 64.6883 )
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
@@ -29,7 +28,7 @@ collision_layer = 15
 collision_mask = 15
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -131071, 0, 0, -65535, 0, 0 )
+tile_data = PoolIntArray( -131071, 0, 0, 65541, 0, 0 )
 _sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_lock_": true
@@ -37,6 +36,6 @@ __meta__ = {
 
 [node name="Enemy" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( -249.196, 19.8475 )
+position = Vector2( -212.441, -134.522 )
 
 

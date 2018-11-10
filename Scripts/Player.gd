@@ -11,8 +11,9 @@ var movedir = Vector2(0,0)
 var CollisionNode
 var playerPos
 var mousePos
-
+#export (PackedScene) var BulletType
 var trauma = 0
+onready var bullet = preload("res://Scenes/Bullet.tscn")
 
 
 #onready var healthBar = $CanvasLayer/PlayerUI/HealthBar
@@ -34,7 +35,7 @@ func _physics_process(delta):
 	movement_loop()
 #	speed_decay()
 	#CollisionNode.disabled = false # Reenable collision (Has to do with swap code)
-	#updateCamera()
+	updateCamera()
 
 func updateCamera():
 	var targetPosition = (mousePos*0.3+global_position*0.7)
@@ -58,9 +59,7 @@ func controls_loop():
 	var RIGHT	= Input.is_action_pressed("ui_right")
 	var UP		= Input.is_action_pressed("ui_up")
 	var DOWN	= Input.is_action_pressed("ui_down")
-	#var DASH	= Input.is_action_pressed("ui_dash")
-	#var SWAP	= Input.is_action_pressed("ui_swap")
-	#var BARRIER	= Input.is_action_pressed("ui_barrier")
+	var SHOOT	= Input.is_action_pressed("ui_shoot")
 
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
@@ -75,12 +74,18 @@ func controls_loop():
 #	elif movedir.x < 0:
 #		anim = "PlayerWalkingRight"
 #		$Sprite.flip_h = true
+	var shootAvailable = true
+	
+	if SHOOT:# && shootAvailable:
+		var b = bullet.instance()
+		var p = get_parent()
+		p.add_child(b)
+		b.position = position
+		var mousePos = get_global_mouse_position()
+		b.rotation = get_angle_to(mousePos)
+		trauma = 40
 
-#	if DASH && dashAvailable && dashUnlocked:
-#		MOTION_SPEED = maxDashSpeed
-#		dashAvailable = false
-#		dashDelay(DASH_DELAY)	# Start dash cooldown timer
-#		trauma = 40
+		
 #		$PlayerAudio.stream = load("res://Audio/WarpSFX.wav")
 #		$PlayerAudio.volume_db = Global.masterSound
 #		$PlayerAudio.play()
