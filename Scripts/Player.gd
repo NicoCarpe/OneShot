@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 export var NORMAL_SPEED = 500
 var MOTION_SPEED = NORMAL_SPEED
-var maxDashSpeed = 2000
 #onready var SpriteNode = get_node("Sprite")
 #onready var AnimNode = get_node("AnimationPlayer")
 #onready var WeaponNode = get_node("RotationNode/WeaponSwing")
@@ -14,6 +13,7 @@ var mousePos
 #export (PackedScene) var BulletType
 var trauma = 0
 onready var bullet = preload("res://Scenes/Bullet.tscn")
+var haveBullet = true
 
 
 #onready var healthBar = $CanvasLayer/PlayerUI/HealthBar
@@ -32,7 +32,7 @@ func _physics_process(delta):
 	mousePos = get_global_mouse_position()
 	#if playerControlEnabled:
 	controls_loop()
-	movement_loop()
+	movement_loop(delta)
 #	speed_decay()
 	#CollisionNode.disabled = false # Reenable collision (Has to do with swap code)
 	updateCamera()
@@ -76,7 +76,7 @@ func controls_loop():
 #		$Sprite.flip_h = true
 	var shootAvailable = true
 	
-	if SHOOT:# && shootAvailable:
+	if SHOOT && haveBullet:
 		var b = bullet.instance()
 		var p = get_parent()
 		p.add_child(b)
@@ -84,6 +84,7 @@ func controls_loop():
 		var mousePos = get_global_mouse_position()
 		b.rotation = get_angle_to(mousePos)
 		trauma = 40
+		haveBullet = false
 
 		
 #		$PlayerAudio.stream = load("res://Audio/WarpSFX.wav")
@@ -119,9 +120,13 @@ func controls_loop():
 #		$Sprite.modulate.g = 0
 #		WeaponNode.attack(attackDirection)
 
-func movement_loop():
+func movement_loop(delta):
 	var motion = movedir.normalized() * MOTION_SPEED
-	move_and_slide(motion)
+	var collision = move_and_collide(motion*delta)
+	if collision:
+		if collision.collider.is_in_group("Bullet"):
+			collision.collider.queue_free()
+			haveBullet = true
 #	if movedir == Vector2():
 #		anim = "Idle"
 #	if anim != animNew:
@@ -138,109 +143,3 @@ func movement_loop():
 #				var collider = collisions.collider.get_node("./")
 #				collider.applyEffect(self)
 #		pass
-
-#func speed_decay():
-#	if MOTION_SPEED > NORMAL_SPEED:
-#		#SpriteNode.set("modulate",Color(233.0/255,0,0,1)) # Used to test dash
-#		MOTION_SPEED *= 0.90
-#		if MOTION_SPEED > minDashInvulnSpeed and MOTION_SPEED < maxDashInvulnSpeed:
-#			dashInvuln = true
-#			SpriteNode.set("modulate",Color(0,0,233.0/255,1)) # Used to test dash
-#		else:
-#			dashInvuln = false
-#			SpriteNode.set("modulate",Color(1,1,1,1))
-#	elif MOTION_SPEED == NORMAL_SPEED:
-#		pass
-#	else:
-#		#SpriteNode.set("modulate",Color(233.0/255,255,255,1))
-#		MOTION_SPEED = NORMAL_SPEED
-
-#func dashDelay(sec):
-#	dashTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
-#	dashTimer.start() # Start the Timer counting down
-#	yield(dashTimer, "timeout") # Wait for the timer to wind down
-#	dashAvailable = true
-#
-#func swapDelay(sec):
-#	swapTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
-#	swapTimer.start() # Start the Timer counting down
-#	yield(swapTimer, "timeout") # Wait for the timer to wind down
-#	swapAvailable = true
-#	SpriteNode.set("modulate",Color(1,1,1))
-#
-#func swapInvuln(sec):
-#	swapInvulnTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
-#	swapInvulnTimer.start() # Start the Timer counting down
-#	yield(swapInvulnTimer, "timeout") # Wait for the timer to wind down
-#	swapInvuln = false
-#
-#func swapNotice(sec):
-#	swapNoticeTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
-#	swapNoticeTimer.start() # Start the Timer counting down
-#	yield(swapNoticeTimer, "timeout") # Wait for the timer to wind down
-#	swappedRecently = false
-#
-#func swapPlaces(player, enemy): # Takes in player node and enemy collider
-#	CollisionNode.disabled = true	# Disable collision to avoid displacement bug after teleport
-#	var tempEnemyPos = enemy.position
-#	enemy.position = position
-#	position = tempEnemyPos
-#
-#func takeDamage(damage):
-#	if vulnerable and not swapInvuln and not dashInvuln:
-#		vulnerable = false
-#		trauma = 60
-#		$PlayerAudio.stream = load("res://Audio/HitSound.wav")
-#		$PlayerAudio.volume_db = Global.masterSound
-#		$PlayerAudio.play()
-#		health -= damage
-#		updateHealthBar()
-#		$InvulPlayer.play("Invuln")
-#		if health <= 0:
-#			respawn()
-#
-#func updateHealthBar():
-#	healthBar.setMaxValue(maxHealth)
-#	healthBar.setValue(health)
-#
-#func updateHealthUpProgress():
-#	if piecesOfHeart == 3:
-#		piecesOfHeart = 0
-#		maxHealth += 1
-#		setHealth(maxHealth)
-#	get_node("PlayerAudio").stream = load("res://Audio/RecievedChat.ogg")
-#	get_node("PlayerAudio").playing = true
-#	get_node("PlayerAudio").volume_db = Global.masterSound
-#	healthUpProgress.setValue(piecesOfHeart)
-#
-#func setHealth(value):
-#	health = value
-#	updateHealthBar()
-#
-#func respawn():
-#	playerControlEnabled = false
-#	get_node("../").reloadLastScene()
-#	health = maxHealth
-#	updateHealthBar()
-#
-#func _on_InvulPlayer_animation_finished(anim_name):
-#	if anim_name == "Invuln":
-#		vulnerable = true
-#
-#
-#func _on_WeaponSwing_attack_finished():
-#	barrierAvailable = true
-#	$Sprite.modulate.g = 1
-#
-#func save():
-#	var saveDict = {
-#		"filename": filename,
-#		"parent": get_parent().get_path(),
-#		"health": maxHealth,
-#		"maxHealth": maxHealth,
-#		"position": position,
-#		"dashUnlocked": dashUnlocked,
-#		"swapUnlocked": swapUnlocked,
-#		"barrierUnlocked": barrierUnlocked
-#	}
-#	return saveDict
