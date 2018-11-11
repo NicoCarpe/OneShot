@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/1shotVoiceclip.wav-1ab0b6d81937e9649856ab9eb0a25158.sample"
+
+[deps]
+
+source_file="res://Audio Files/1shotVoiceclip.wav"
+source_md5="008e9947f67feee0257f4626ad46c0a4"
+
+dest_files=[ "res://.import/1shotVoiceclip.wav-1ab0b6d81937e9649856ab9eb0a25158.sample" ]
+dest_md5="2c704f42db3a4ec532ce7eba2a27700b"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

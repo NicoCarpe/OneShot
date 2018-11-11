@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PlayerDeathScream.wav-622ce7912ccf412e68f03276b606a409.sample"
+
+[deps]
+
+source_file="res://Audio Files/PlayerDeathScream.wav"
+source_md5="889ad7a12a6e2069e96fa99a6b795529"
+
+dest_files=[ "res://.import/PlayerDeathScream.wav-622ce7912ccf412e68f03276b606a409.sample" ]
+dest_md5="3640971797d7159a70b65b09834fed28"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

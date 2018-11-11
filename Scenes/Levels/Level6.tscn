@@ -51,6 +51,6 @@ position = Vector2( -86.2646, 707.711 )
 [node name="Goal" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 979.669, 1056.84 )
-level = "Null"
+level = "Level1"
 
 

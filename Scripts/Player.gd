@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var NORMAL_SPEED = 500
+var WITH_BULLET_SPEED = 200
 var MOTION_SPEED = NORMAL_SPEED
 #onready var SpriteNode = get_node("Sprite")
 onready var AnimNode = get_node("AnimationPlayer")
@@ -23,6 +24,7 @@ var animNew
 
 func _ready():
 	set_physics_process(true)
+	MOTION_SPEED = WITH_BULLET_SPEED
 	#RayNode = get_node("RayCast2D")	#For directions
 #	CollisionNode = get_node("Collision")
 #	lastTransferPoint = position
@@ -71,10 +73,10 @@ func controls_loop(delta):
 #	elif movedir.y < 0:
 #		anim = "PlayerWalkingUp"
 	if movedir.x > 0:
-		anim = "PlayerWalkingRight"
+		#anim = "PlayerWalkingRight"
 		$Sprite.flip_h = false
 	elif movedir.x < 0:
-		anim = "PlayerWalkingRight"
+		#anim = "PlayerWalkingRight"
 		$Sprite.flip_h = true
 	
 	if SHOOT && canShoot:
@@ -92,6 +94,7 @@ func controls_loop(delta):
 			#$PlayerAudio.volume_db = Global.masterSound
 			$PlayerAudio.play()
 			bulletShootDelay(1)
+			MOTION_SPEED = NORMAL_SPEED
 			var recoilDir = Vector2(1,0).rotated(get_angle_to(mousePos))
 			var motion = -recoilDir.normalized() * MOTION_SPEED*3
 			move_and_collide(motion*delta)
@@ -109,6 +112,7 @@ func movement_loop(delta):
 		if collision.collider.is_in_group("Bullet"):
 			collision.collider.queue_free()
 			haveBullet = true
+			MOTION_SPEED = WITH_BULLET_SPEED
 		move_and_slide(motion)
 	if movedir == Vector2():
 		anim = "Idle"

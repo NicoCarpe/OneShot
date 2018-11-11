@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/OneshotGunVer1.wav-8e426fe18d353bc6bc47cb18022185c2.sample"
+
+[deps]
+
+source_file="res://Audio Files/OneshotGunVer1.wav"
+source_md5="63f4b48d16796a13de27253da9dbc0d4"
+
+dest_files=[ "res://.import/OneshotGunVer1.wav-8e426fe18d353bc6bc47cb18022185c2.sample" ]
+dest_md5="f25f41ea1fbca9f5e8ff247c167af999"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
