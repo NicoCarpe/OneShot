@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/enemyWalk 1.png-ff5fe57c92a6324b67c71cc128dec6f1.stex"
+
+[deps]
+
+source_file="res://Sprites/enemyWalk 1.png"
+source_md5="c9eb27dccd212c3360d046adedffbbc5"
+
+dest_files=[ "res://.import/enemyWalk 1.png-ff5fe57c92a6324b67c71cc128dec6f1.stex" ]
+dest_md5="24c07b956cb0512b5908540488166306"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
