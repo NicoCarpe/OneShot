@@ -8,6 +8,8 @@
 
 [node name="Level" type="Node2D"]
 
+_sections_unfolded = [ "Transform" ]
+
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( -11.0264, 64.6883 )
@@ -63,7 +65,7 @@ position = Vector2( 427.427, 380.15 )
 [node name="Goal" parent="." index="8" instance=ExtResource( 4 )]
 
 position = Vector2( 1412.91, -134.483 )
-level = "Level2"
+level = "Level5"
 
 [node name="StaticBody2D" parent="." index="9" instance=ExtResource( 5 )]
 

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/1Gunshot.wav-9c1485ccfadd42a226401d4a22b372be.sample"
+path="res://.import/1shotVoiceclip.wav-f59fb5f09509b96b478f5c7d53dde405.sample"
 
 [deps]
 
-source_file="res://Audio/1Gunshot.wav"
-dest_files=[ "res://.import/1Gunshot.wav-9c1485ccfadd42a226401d4a22b372be.sample" ]
+source_file="res://1shotVoiceclip.wav"
+dest_files=[ "res://.import/1shotVoiceclip.wav-f59fb5f09509b96b478f5c7d53dde405.sample" ]
 
 [params]
 

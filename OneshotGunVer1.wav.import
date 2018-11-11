@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/1Gunshot.wav-9c1485ccfadd42a226401d4a22b372be.sample"
+path="res://.import/OneshotGunVer1.wav-169a61d7a6a4bf8d9b482d8a8ebd1f47.sample"
 
 [deps]
 
-source_file="res://Audio/1Gunshot.wav"
-dest_files=[ "res://.import/1Gunshot.wav-9c1485ccfadd42a226401d4a22b372be.sample" ]
+source_file="res://OneshotGunVer1.wav"
+dest_files=[ "res://.import/OneshotGunVer1.wav-169a61d7a6a4bf8d9b482d8a8ebd1f47.sample" ]
 
 [params]
 
