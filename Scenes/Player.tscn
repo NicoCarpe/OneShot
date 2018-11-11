@@ -59,7 +59,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 0, 0, 1 ), Color( 0.171875, 1, 0, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "Player",
 ]]
 
@@ -81,8 +81,8 @@ _sections_unfolded = [ "Animation", "Offset" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -6.6746, 0.231626 )
-scale = Vector2( 1.45513, 0.995549 )
+position = Vector2( -6.6746, 12.8727 )
+scale = Vector2( 1.45513, 0.634375 )
 shape = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
