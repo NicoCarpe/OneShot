@@ -23,7 +23,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-modulate = Color( 1, 0.0390625, 0.0390625, 1 )
+modulate = Color( 1, 0.984375, 0, 1 )
 position = Vector2( -0.709649, -0.520222 )
 scale = Vector2( 0.655358, 0.173642 )
 texture = ExtResource( 2 )
