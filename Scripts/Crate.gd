@@ -13,3 +13,10 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+func onHit():
+	$AudioStreamPlayer2D.play()
+	$CollisionShape2D.disabled = true
+	hide()
+
+func _on_AudioStreamPlayer2D_finished():
+	queue_free()

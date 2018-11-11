@@ -17,3 +17,11 @@ func _process(delta):
 		if collision.collider.is_in_group("Player"):
 			collision.collider.playerHit()
 		move_and_slide(motion)
+
+func onHit():
+	$AudioStreamPlayer2D.play()
+	$CollisionShape2D.disabled = true
+	hide()
+
+func _on_AudioStreamPlayer2D_finished():
+	queue_free()

@@ -19,13 +19,12 @@ func _process(delta):
 	
 	if collision:
 		if collision.collider.is_in_group("Enemy"):
-			collision.collider.queue_free()
-			#pass#TODO create dropped bullet
+			collision.collider.onHit()
 		elif collision.collider.is_in_group("Player"):
 			if canKillPlayer:
 				collision.collider.playerHit()
 		elif collision.collider.is_in_group("Breakable"):
-			collision.collider.queue_free()
+			collision.collider.onHit()	# Pierces boxes
 		elif collision.collider.has_method("onHit"):
 			collision.collider.onHit()
 			dropped = true

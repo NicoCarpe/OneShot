@@ -62,7 +62,7 @@ level = "Level1"
 [node name="PowerUp" parent="." index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 352, 288 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 bulletType = "Bounce"
 
 

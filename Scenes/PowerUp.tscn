@@ -10,7 +10,9 @@ extents = Vector2( 32, 32 )
 
 [node name="PowerUp" type="Node2D"]
 
+z_index = -1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 bulletType = null
 
 [node name="Area2D" type="Area2D" parent="." index="0"]

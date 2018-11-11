@@ -98,6 +98,7 @@ func controls_loop(delta):
 			b.position = position
 			var mousePos = get_global_mouse_position()
 			b.rotation = get_angle_to(mousePos)
+			b.move_and_slide(Vector2(1,0).rotated(b.rotation) * MOTION_SPEED)
 			trauma = 80
 			haveBullet = false
 			canShoot = false
