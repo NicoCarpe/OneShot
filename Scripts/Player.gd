@@ -18,6 +18,7 @@ var haveBullet = true
 var canShoot = true
 var anim
 var animNew
+var bulletType = "Normal"
 
 #onready var healthBar = $CanvasLayer/PlayerUI/HealthBar
 #onready var healthUpProgress = $CanvasLayer/PlayerUI/HealthUpProgress
@@ -91,6 +92,7 @@ func controls_loop(delta):
 	if SHOOT && canShoot:
 		if haveBullet:
 			var b = bullet.instance()
+			b.bulletType = bulletType
 			var p = get_parent()
 			p.add_child(b)
 			b.position = position
@@ -123,7 +125,6 @@ func movement_loop(delta):
 			haveBullet = true
 			MOTION_SPEED = WITH_BULLET_SPEED
 			$Control/ProgressBar.show()
-			#bulletShootDelay(1)
 		move_and_slide(motion)
 	if movedir == Vector2():
 		anim = "Idle"
@@ -136,8 +137,5 @@ func playerHit():
 	BGMSFX.play("playerDeath")
 	get_tree().reload_current_scene()
 
-#func bulletShootDelay(sec):
-#	$bulletDelayTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
-#	$bulletDelayTimer.start() # Start the Timer counting down
-#	yield($bulletDelayTimer, "timeout") # Wait for the timer to wind down
-#	canShoot = true
+func changeBullet(_bulletType):
+	bulletType = _bulletType
