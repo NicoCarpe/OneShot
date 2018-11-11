@@ -25,6 +25,7 @@ var animNew
 func _ready():
 	set_physics_process(true)
 	MOTION_SPEED = WITH_BULLET_SPEED
+	$Control/ProgressBar.value = 100
 	#RayNode = get_node("RayCast2D")	#For directions
 #	CollisionNode = get_node("Collision")
 #	lastTransferPoint = position
@@ -37,6 +38,11 @@ func _physics_process(delta):
 	#if playerControlEnabled:
 	controls_loop(delta)
 	movement_loop(delta)
+	if haveBullet and $Control/ProgressBar.value <= 100:
+		$Control/ProgressBar.value += 100/30
+	if $Control/ProgressBar.value == 100:
+		$Control/ProgressBar.hide()
+		canShoot = true
 #	speed_decay()
 	#CollisionNode.disabled = false # Reenable collision (Has to do with swap code)
 	updateCamera()
@@ -93,8 +99,8 @@ func controls_loop(delta):
 			$PlayerAudio.stream = load("res://Audio/1Gunshot.wav")
 			#$PlayerAudio.volume_db = Global.masterSound
 			$PlayerAudio.play()
-			bulletShootDelay(1)
 			MOTION_SPEED = NORMAL_SPEED
+			$Control/ProgressBar.value = 0
 			var recoilDir = Vector2(1,0).rotated(get_angle_to(mousePos))
 			var motion = -recoilDir.normalized() * MOTION_SPEED*3
 			move_and_collide(motion*delta)
@@ -113,6 +119,8 @@ func movement_loop(delta):
 			collision.collider.queue_free()
 			haveBullet = true
 			MOTION_SPEED = WITH_BULLET_SPEED
+			$Control/ProgressBar.show()
+			#bulletShootDelay(1)
 		move_and_slide(motion)
 	if movedir == Vector2():
 		anim = "Idle"
@@ -120,8 +128,8 @@ func movement_loop(delta):
 		animNew = anim
 		AnimNode.play(anim)
 
-func bulletShootDelay(sec):
-	$bulletDelayTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
-	$bulletDelayTimer.start() # Start the Timer counting down
-	yield($bulletDelayTimer, "timeout") # Wait for the timer to wind down
-	canShoot = true
+#func bulletShootDelay(sec):
+#	$bulletDelayTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+#	$bulletDelayTimer.start() # Start the Timer counting down
+#	yield($bulletDelayTimer, "timeout") # Wait for the timer to wind down
+#	canShoot = true
