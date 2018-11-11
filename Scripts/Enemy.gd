@@ -4,19 +4,34 @@ export var MOTION_SPEED = 100
 var player
 func _ready():
 	player = get_tree().root.get_node("Level/Player")
+var movedir = Vector2(1,0)
+var anim = "idle"
+var newAnim = "idle"
 
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 	if canSeeTarget():
-		rotation += get_angle_to(player.position)
-		var movedir = Vector2(1,0).rotated(rotation)
+		newAnim = "walking"
+		if newAnim != anim:
+			$AnimationPlayer.play("walking")
+			anim = newAnim
+		movedir = Vector2(1, 0).rotated(get_angle_to(player.position))
+		if movedir.x > 0:
+			$Sprite.flip_h = true
+		else:
+			$Sprite.flip_h = false
 		var motion = movedir.normalized() * MOTION_SPEED
 		var collision = move_and_collide(motion*delta)
 		if collision:
 			if collision.collider.is_in_group("Player"):
 				collision.collider.playerHit()
 			move_and_slide(motion)
+	else:
+		newAnim = "idle"
+		if newAnim != anim:
+			$AnimationPlayer.play("idle")
+			anim = newAnim
 
 func canSeeTarget():
 	#Raycast to check if can see target
