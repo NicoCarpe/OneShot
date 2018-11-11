@@ -7,10 +7,7 @@ path="res://.import/1GunshotNobullet.wav-042c52e71407a3c1af5aa434178bce19.sample
 [deps]
 
 source_file="res://Audio/1GunshotNobullet.wav"
-source_md5="9cfb0331bc5107831cbfc62b56199344"
-
 dest_files=[ "res://.import/1GunshotNobullet.wav-042c52e71407a3c1af5aa434178bce19.sample" ]
-dest_md5="dd364a3d2433a0a368b745a97fb6baea"
 
 [params]
 
