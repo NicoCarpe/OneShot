@@ -3,7 +3,7 @@ extends KinematicBody2D
 export var NORMAL_SPEED = 500
 var MOTION_SPEED = NORMAL_SPEED
 #onready var SpriteNode = get_node("Sprite")
-#onready var AnimNode = get_node("AnimationPlayer")
+onready var AnimNode = get_node("AnimationPlayer")
 #onready var WeaponNode = get_node("RotationNode/WeaponSwing")
 #onready var RotationNode = get_node("RotationNode")
 var movedir = Vector2(0,0)
@@ -15,6 +15,8 @@ var trauma = 0
 onready var bullet = preload("res://Scenes/Bullet.tscn")
 var haveBullet = true
 var canShoot = true
+var anim
+var animNew
 
 #onready var healthBar = $CanvasLayer/PlayerUI/HealthBar
 #onready var healthUpProgress = $CanvasLayer/PlayerUI/HealthUpProgress
@@ -68,12 +70,12 @@ func controls_loop(delta):
 #		anim = "PlayerWalkingDown"
 #	elif movedir.y < 0:
 #		anim = "PlayerWalkingUp"
-#	if movedir.x > 0:
-#		anim = "PlayerWalkingRight"
-#		$Sprite.flip_h = false
-#	elif movedir.x < 0:
-#		anim = "PlayerWalkingRight"
-#		$Sprite.flip_h = true
+	if movedir.x > 0:
+		anim = "PlayerWalkingRight"
+		$Sprite.flip_h = false
+	elif movedir.x < 0:
+		anim = "PlayerWalkingRight"
+		$Sprite.flip_h = true
 	
 	if SHOOT && canShoot:
 		if haveBullet:
@@ -108,11 +110,11 @@ func movement_loop(delta):
 			collision.collider.queue_free()
 			haveBullet = true
 		move_and_slide(motion)
-#	if movedir == Vector2():
-#		anim = "Idle"
-#	if anim != animNew:
-#		animNew = anim
-#		AnimNode.play(anim)
+	if movedir == Vector2():
+		anim = "Idle"
+	if anim != animNew:
+		animNew = anim
+		AnimNode.play(anim)
 
 func bulletShootDelay(sec):
 	$bulletDelayTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
