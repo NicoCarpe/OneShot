@@ -140,3 +140,8 @@ func playerHit():
 
 func changeBullet(_bulletType):
 	bulletType = _bulletType
+
+func noBullet():
+	$Control/HeadText.text = "No Bullet!"
+	$Control/TextAnimator.play("noBullet")
+	

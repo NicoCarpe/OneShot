@@ -10,7 +10,9 @@ extents = Vector2( 20, 20 )
 
 [node name="Goal" type="Node2D"]
 
+z_index = -1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 level = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
