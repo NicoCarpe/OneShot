@@ -8,6 +8,7 @@ onready var AnimNode = get_node("AnimationPlayer")
 #onready var WeaponNode = get_node("RotationNode/WeaponSwing")
 #onready var RotationNode = get_node("RotationNode")
 var movedir = Vector2(0,0)
+var bulletColor = Color(1, 1, 1)
 var CollisionNode
 var playerPos
 var mousePos
@@ -126,7 +127,7 @@ func movement_loop(delta):
 		if collision.collider.is_in_group("Bullet"):
 			collision.collider.queue_free()
 			haveBullet = true
-			$CanvasLayer/Bullet.modulate = Color(1, 1, 1)
+			$CanvasLayer/Bullet.modulate = bulletColor
 			MOTION_SPEED = WITH_BULLET_SPEED
 			$Control/ProgressBar.show()
 		move_and_slide(motion)
@@ -140,11 +141,13 @@ func playerHit():
 	BGMSFX.play("res://Audio/PlayerDeathScream.wav")
 	get_tree().reload_current_scene()
 
-func changeBullet(_bulletType):
+func changeBullet(_bulletType, _bulletColor):
 	if bulletType != _bulletType:
 		bulletType = _bulletType
 		$Control/HeadText.text = bulletType
 		$Control/TextAnimator.play("notification")
+		bulletColor = _bulletColor
+		$CanvasLayer/Bullet.modulate = bulletColor
 
 func noBullet():
 	$Control/HeadText.text = "No Bullet!"
