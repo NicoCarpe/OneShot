@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/tileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Crate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=4]
+
+[node name="Level" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -786429, 0, 0, -786428, 0, 0, -720895, 0, 0, -720894, 0, 0, -720893, 0, 0, -720892, 0, 0, -720891, 0, 0, -720890, -1610612736, 0, -720889, -1610612736, 0, -720888, -1610612736, 0, -720887, -1610612736, 0, -655359, 0, 0, -655350, -1610612736, 0, -589823, 0, 0, -589814, -1610612736, 0, -524287, 0, 0, -524285, -1610612736, 0, -524284, 0, 0, -524283, 0, 0, -524282, -1610612736, 0, -524278, -1610612736, 0, -458752, 0, 0, -458751, 0, 0, -458747, 0, 0, -458742, -1610612736, 0, -393216, 0, 0, -393211, 0, 0, -393206, -1610612736, 0, -327680, 0, 0, -327675, 0, 0, -327670, -1610612736, 0, -196612, -1610612736, 0, -262144, 0, 0, -262139, 0, 0, -262134, -1610612736, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196603, 0, 0, -196598, -1610612736, 0, -65541, 0, 0, -131067, 0, 0, -131062, -1610612736, 0, -5, 0, 0, -65531, 0, 0, -65526, -1610612736, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, -1610612736, 0, 7, -1610612736, 0, 8, -1610612736, 0, 9, -1610612736, 0, 10, -1610612736, 0 )
+
+[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( -202.577, -63.8426 )
+
+[node name="StaticBody2D" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 30.0001, -98.0003 )
+
+[node name="StaticBody2D2" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 30, -30 )
+
+[node name="StaticBody2D3" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 331.255, -568.371 )
+scale = Vector2( 1.8023, 1.6085 )
+
+[node name="Goal" parent="." index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 497.716, -100.211 )
+level = "Level3"
+
+
