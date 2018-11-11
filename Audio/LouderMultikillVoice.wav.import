@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LouderMultikillVoice.wav-091bf65003d2e2bc86c9284eb0282eab.sample"
+
+[deps]
+
+source_file="res://Audio/LouderMultikillVoice.wav"
+source_md5="6a1ffb46ea2fa33ab6d495413885e752"
+
+dest_files=[ "res://.import/LouderMultikillVoice.wav-091bf65003d2e2bc86c9284eb0282eab.sample" ]
+dest_md5="e0782d9c0ebdb3aa3402931200e23a69"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

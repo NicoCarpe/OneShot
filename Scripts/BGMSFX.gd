@@ -1,8 +1,6 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var db = 0
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -16,4 +14,5 @@ func _ready():
 
 func play(audio):
 	$BGMSFX.stream = load(audio)
+	$BGMSFX.volume_db = db
 	$BGMSFX.play()
