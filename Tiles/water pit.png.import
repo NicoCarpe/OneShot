@@ -7,10 +7,7 @@ path="res://.import/water pit.png-509aa60467493b172a266542f1df106e.stex"
 [deps]
 
 source_file="res://Tiles/water pit.png"
-source_md5="fe45670a5055c2b26d8d02f171fd09c5"
-
 dest_files=[ "res://.import/water pit.png-509aa60467493b172a266542f1df106e.stex" ]
-dest_md5="a4b521b93bcfa8c09ee0cadffff2ca97"
 
 [params]
 

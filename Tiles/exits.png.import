@@ -7,10 +7,7 @@ path="res://.import/exits.png-9ce269befda81dc22a105b43680718af.stex"
 [deps]
 
 source_file="res://Tiles/exits.png"
-source_md5="06dc18ba0dd696d5a367e184c21f09bf"
-
 dest_files=[ "res://.import/exits.png-9ce269befda81dc22a105b43680718af.stex" ]
-dest_md5="8c70d75029ea85f38e30b69e313a0563"
 
 [params]
 

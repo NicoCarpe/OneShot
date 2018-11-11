@@ -7,10 +7,7 @@ path="res://.import/1shotVoiceclip.wav-0ad3018f985640db240501a1fdc7900f.sample"
 [deps]
 
 source_file="res://Audio/1shotVoiceclip.wav"
-source_md5="008e9947f67feee0257f4626ad46c0a4"
-
 dest_files=[ "res://.import/1shotVoiceclip.wav-0ad3018f985640db240501a1fdc7900f.sample" ]
-dest_md5="2c704f42db3a4ec532ce7eba2a27700b"
 
 [params]
 

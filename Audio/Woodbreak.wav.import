@@ -7,10 +7,7 @@ path="res://.import/Woodbreak.wav-947e32c38fba36dd83cc10e168d54c34.sample"
 [deps]
 
 source_file="res://Audio/Woodbreak.wav"
-source_md5="cb8308bc099da3c7c10bd510ab4fc58c"
-
 dest_files=[ "res://.import/Woodbreak.wav-947e32c38fba36dd83cc10e168d54c34.sample" ]
-dest_md5="fc3f5853b9f4a2dfcaac197b49c6167f"
 
 [params]
 

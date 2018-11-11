@@ -7,10 +7,7 @@ path="res://.import/enemyWalk 1.png-ff5fe57c92a6324b67c71cc128dec6f1.stex"
 [deps]
 
 source_file="res://Sprites/enemyWalk 1.png"
-source_md5="c9eb27dccd212c3360d046adedffbbc5"
-
 dest_files=[ "res://.import/enemyWalk 1.png-ff5fe57c92a6324b67c71cc128dec6f1.stex" ]
-dest_md5="24c07b956cb0512b5908540488166306"
 
 [params]
 

@@ -17,3 +17,11 @@ func _ready():
 
 func _on_Switch_onHit():
 	queue_free()
+
+
+func _on_Switch3_onHit():
+	pass # replace with function body
+
+
+func _on_Switch2_onHit():
+	pass # replace with function body

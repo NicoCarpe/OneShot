@@ -24,15 +24,15 @@ points = PoolVector2Array( -32, 32, 32, -32, 32, 32 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
-
-custom_solver_bias = 0.0
-points = PoolVector2Array( -32, 32, 32, -32, 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( -32, 32, 32, -32, 32, 32 )
 
 [resource]
 

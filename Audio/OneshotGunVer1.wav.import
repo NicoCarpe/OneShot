@@ -7,10 +7,7 @@ path="res://.import/OneshotGunVer1.wav-06ffa74224f4d6a8d36c7b9d5743a8bf.sample"
 [deps]
 
 source_file="res://Audio/OneshotGunVer1.wav"
-source_md5="63f4b48d16796a13de27253da9dbc0d4"
-
 dest_files=[ "res://.import/OneshotGunVer1.wav-06ffa74224f4d6a8d36c7b9d5743a8bf.sample" ]
-dest_md5="33bf901b9843f2399c2fefe23020b208"
 
 [params]
 
