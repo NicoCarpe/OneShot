@@ -72,7 +72,11 @@ func controls_loop(delta):
 	var DOWN	= Input.is_action_pressed("ui_down")
 	var SHOOT	= Input.is_action_pressed("ui_shoot")
 	var RESTART	= Input.is_action_pressed("ui_restart")
+	var PAUSE = Input.is_action_pressed("ui_cancel")
 
+	if PAUSE:
+		$CanvasLayer/Menu/Panel.show()
+		get_tree().paused = true
 	if RESTART:
 		get_tree().reload_current_scene()
 	movedir.x = -int(LEFT) + int(RIGHT)
