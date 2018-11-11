@@ -139,9 +139,12 @@ func playerHit():
 	get_tree().reload_current_scene()
 
 func changeBullet(_bulletType):
-	bulletType = _bulletType
+	if bulletType != _bulletType:
+		bulletType = _bulletType
+		$Control/HeadText.text = bulletType
+		$Control/TextAnimator.play("notification")
 
 func noBullet():
 	$Control/HeadText.text = "No Bullet!"
-	$Control/TextAnimator.play("noBullet")
+	$Control/TextAnimator.play("notification")
 	

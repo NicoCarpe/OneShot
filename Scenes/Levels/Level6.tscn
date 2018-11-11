@@ -35,29 +35,28 @@ __meta__ = {
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 458.921, 315.08 )
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index", "collision" ]
 
 [node name="Enemy" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( -392.366, 512 )
+position = Vector2( 183.634, 768 )
 
 [node name="Enemy2" parent="." index="3" instance=ExtResource( 3 )]
 
-position = Vector2( -448, 672 )
+position = Vector2( 128, 928 )
 
 [node name="Enemy3" parent="." index="4" instance=ExtResource( 3 )]
 
-position = Vector2( -640, 608 )
+position = Vector2( -64, 864 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Enemy4" parent="." index="5" instance=ExtResource( 3 )]
 
-position = Vector2( -402.911, 612.779 )
+position = Vector2( 173.089, 868.779 )
 
 [node name="Goal" parent="." index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 979.669, 1056.84 )
-level = "Level1"
 
 [node name="PowerUp" parent="." index="7" instance=ExtResource( 5 )]
 

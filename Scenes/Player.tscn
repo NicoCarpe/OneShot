@@ -30,7 +30,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 
-resource_name = "noBullet"
+resource_name = "notification"
 length = 1.0
 loop = false
 step = 0.1
@@ -59,7 +59,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 0, 0, 1 ), Color( 0.171875, 1, 0, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
 
@@ -208,7 +208,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/noBullet = SubResource( 4 )
+anims/notification = SubResource( 4 )
 blend_times = [  ]
 
 
