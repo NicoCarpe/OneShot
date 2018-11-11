@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/wall 5.png-857ef4ce019fefb4425ae2a39cc9d20f.stex"
+
+[deps]
+
+source_file="res://Tiles/wall 5.png"
+source_md5="b038099d1a5d3558a417bc4d852325ac"
+
+dest_files=[ "res://.import/wall 5.png-857ef4ce019fefb4425ae2a39cc9d20f.stex" ]
+dest_md5="60bdfbf619461d038d16fb48a2daab63"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

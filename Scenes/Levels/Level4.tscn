@@ -42,32 +42,28 @@ __meta__ = {
 
 position = Vector2( 302.213, -253.006 )
 
-[node name="Enemy3" parent="." index="3" instance=ExtResource( 3 )]
-
-position = Vector2( 465.068, 24.5876 )
-
-[node name="Enemy4" parent="." index="4" instance=ExtResource( 3 )]
+[node name="Enemy4" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 696.396, -304.823 )
 
-[node name="Enemy5" parent="." index="5" instance=ExtResource( 3 )]
+[node name="Enemy5" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 968.438, -145.67 )
 
-[node name="Enemy6" parent="." index="6" instance=ExtResource( 3 )]
+[node name="Enemy6" parent="." index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 1085.03, 178.189 )
 
-[node name="Enemy2" parent="." index="7" instance=ExtResource( 3 )]
+[node name="Enemy2" parent="." index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 427.427, 380.15 )
 
-[node name="Goal" parent="." index="8" instance=ExtResource( 4 )]
+[node name="Goal" parent="." index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 1440, -96 )
 level = "Level5"
 
-[node name="StaticBody2D" parent="." index="9" instance=ExtResource( 5 )]
+[node name="StaticBody2D" parent="." index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 1305.36, -31.6542 )
 
