@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var NORMAL_SPEED = 500
-var WITH_BULLET_SPEED = 200
+var WITH_BULLET_SPEED = 300
 var MOTION_SPEED = NORMAL_SPEED
 #onready var SpriteNode = get_node("Sprite")
 onready var AnimNode = get_node("AnimationPlayer")
@@ -130,6 +130,11 @@ func movement_loop(delta):
 	if anim != animNew:
 		animNew = anim
 		AnimNode.play(anim)
+
+func playerHit():
+#	BGMSFX.load
+	BGMSFX.play("playerDeath")
+	get_tree().reload_current_scene()
 
 #func bulletShootDelay(sec):
 #	$bulletDelayTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds

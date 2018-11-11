@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 BGMPlayer="*res://Scenes/BGMPlayer.tscn"
+BGMSFX="*res://Scenes/BGMSFX.tscn"
 
 [input]
 

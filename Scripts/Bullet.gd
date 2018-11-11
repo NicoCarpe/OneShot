@@ -29,5 +29,5 @@ func _process(delta):
 			#queue_free()
 		if dropped:
 			MOTION_SPEED = 0
-			collision_mask += 2
-			#collision_mask = Remove collision with enemy 
+			collision_mask += 2	# Adds player collision
+			collision_mask -= 4	# Removes collision with enemy 

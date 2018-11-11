@@ -15,5 +15,5 @@ func _process(delta):
 	var collision = move_and_collide(motion*delta)
 	if collision:
 		if collision.collider.is_in_group("Player"):
-			get_tree().reload_current_scene()
+			collision.collider.playerHit()
 		move_and_slide(motion)
