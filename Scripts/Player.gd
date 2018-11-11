@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var NORMAL_SPEED = 500
+var WITH_BULLET_SPEED = 200
 var MOTION_SPEED = NORMAL_SPEED
 #onready var SpriteNode = get_node("Sprite")
 onready var AnimNode = get_node("AnimationPlayer")
@@ -23,6 +24,8 @@ var animNew
 
 func _ready():
 	set_physics_process(true)
+	MOTION_SPEED = WITH_BULLET_SPEED
+	$Control/ProgressBar.value = 100
 	#RayNode = get_node("RayCast2D")	#For directions
 #	CollisionNode = get_node("Collision")
 #	lastTransferPoint = position
@@ -35,6 +38,11 @@ func _physics_process(delta):
 	#if playerControlEnabled:
 	controls_loop(delta)
 	movement_loop(delta)
+	if haveBullet and $Control/ProgressBar.value <= 100:
+		$Control/ProgressBar.value += 100/30
+	if $Control/ProgressBar.value == 100:
+		$Control/ProgressBar.hide()
+		canShoot = true
 #	speed_decay()
 	#CollisionNode.disabled = false # Reenable collision (Has to do with swap code)
 	updateCamera()
@@ -62,7 +70,10 @@ func controls_loop(delta):
 	var UP		= Input.is_action_pressed("ui_up")
 	var DOWN	= Input.is_action_pressed("ui_down")
 	var SHOOT	= Input.is_action_pressed("ui_shoot")
+	var RESTART	= Input.is_action_pressed("ui_restart")
 
+	if RESTART:
+		get_tree().reload_current_scene()
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
 	
@@ -71,10 +82,10 @@ func controls_loop(delta):
 #	elif movedir.y < 0:
 #		anim = "PlayerWalkingUp"
 	if movedir.x > 0:
-		anim = "PlayerWalkingRight"
+		#anim = "PlayerWalkingRight"
 		$Sprite.flip_h = false
 	elif movedir.x < 0:
-		anim = "PlayerWalkingRight"
+		#anim = "PlayerWalkingRight"
 		$Sprite.flip_h = true
 	
 	if SHOOT && canShoot:
@@ -91,7 +102,8 @@ func controls_loop(delta):
 			$PlayerAudio.stream = load("res://Audio/1Gunshot.wav")
 			#$PlayerAudio.volume_db = Global.masterSound
 			$PlayerAudio.play()
-			bulletShootDelay(1)
+			MOTION_SPEED = NORMAL_SPEED
+			$Control/ProgressBar.value = 0
 			var recoilDir = Vector2(1,0).rotated(get_angle_to(mousePos))
 			var motion = -recoilDir.normalized() * MOTION_SPEED*3
 			move_and_collide(motion*delta)
@@ -109,6 +121,9 @@ func movement_loop(delta):
 		if collision.collider.is_in_group("Bullet"):
 			collision.collider.queue_free()
 			haveBullet = true
+			MOTION_SPEED = WITH_BULLET_SPEED
+			$Control/ProgressBar.show()
+			#bulletShootDelay(1)
 		move_and_slide(motion)
 	if movedir == Vector2():
 		anim = "Idle"
@@ -116,8 +131,8 @@ func movement_loop(delta):
 		animNew = anim
 		AnimNode.play(anim)
 
-func bulletShootDelay(sec):
-	$bulletDelayTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
-	$bulletDelayTimer.start() # Start the Timer counting down
-	yield($bulletDelayTimer, "timeout") # Wait for the timer to wind down
-	canShoot = true
+#func bulletShootDelay(sec):
+#	$bulletDelayTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+#	$bulletDelayTimer.start() # Start the Timer counting down
+#	yield($bulletDelayTimer, "timeout") # Wait for the timer to wind down
+#	canShoot = true
