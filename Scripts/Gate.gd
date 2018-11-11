@@ -4,8 +4,6 @@ extends StaticBody2D
 # var a = 2
 # var b = "textvar"
 
-signal onHit
-
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -16,5 +14,6 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func onHit():
-	emit_signal("onHit")
+
+func _on_Switch_onHit():
+	queue_free()

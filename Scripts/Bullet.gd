@@ -21,6 +21,9 @@ func _process(delta):
 			pass
 		elif collision.collider.is_in_group("Breakable"):
 			collision.collider.queue_free()
+		elif collision.collider.has_method("onHit"):
+			collision.collider.onHit()
+			dropped = true
 		else:
 			dropped = true
 			#queue_free()

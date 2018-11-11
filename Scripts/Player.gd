@@ -70,7 +70,10 @@ func controls_loop(delta):
 	var UP		= Input.is_action_pressed("ui_up")
 	var DOWN	= Input.is_action_pressed("ui_down")
 	var SHOOT	= Input.is_action_pressed("ui_shoot")
+	var RESTART	= Input.is_action_pressed("ui_restart")
 
+	if RESTART:
+		get_tree().reload_current_scene()
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
 	
