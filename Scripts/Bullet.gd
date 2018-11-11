@@ -6,12 +6,12 @@ var bulletType = "Normal"	# Bounce
 var bounces = 0
 var canKillPlayer = false
 var kills = 0
+var player
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-
-	pass
+	player = get_tree().root.get_node("Level/Player")
 
 func _process(delta):
 	var movedir = Vector2(1,0).rotated(rotation)
@@ -54,15 +54,19 @@ func _process(delta):
 				BGMSFX.db = 0
 			if kills == 2:
 				BGMSFX.play("res://Audio/LouderDoublekillVoice.wav")
+				player.killText("Double Kill!", "multikill")
 			if kills == 3:
 				BGMSFX.play("res://Audio/LouderTriplekillVoice.wav")
+				player.killText("TRIPLE KILL!", "multikill")
 			if kills == 4:
 				BGMSFX.play("res://Audio/LouderMultikillVoice.wav")
+				player.killText("MULTIKILL!", "multikill")
 			if kills == 5:
 				BGMSFX.play("res://Audio/LouderPentakillVoice.wav")
+				player.killText("PENTAKILL!!!", "multikill")
 			if kills >= 6:
 				BGMSFX.play("res://Audio/LouderMultikillVoice.wav")
-
+				player.killText("MULTIKILL!!!!!", "multikill")
 			MOTION_SPEED = 0
 			collision_mask = collision_mask | 2	# Adds player collision
 			collision_mask -= 4	# Removes collision with enemy 

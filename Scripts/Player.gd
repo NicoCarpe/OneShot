@@ -21,9 +21,6 @@ var anim
 var animNew
 var bulletType = "Normal"
 
-#onready var healthBar = $CanvasLayer/PlayerUI/HealthBar
-#onready var healthUpProgress = $CanvasLayer/PlayerUI/HealthUpProgress
-
 func _ready():
 	set_physics_process(true)
 	MOTION_SPEED = WITH_BULLET_SPEED
@@ -152,4 +149,7 @@ func changeBullet(_bulletType, _bulletColor):
 func noBullet():
 	$Control/HeadText.text = "No Bullet!"
 	$Control/TextAnimator.play("notification")
-	
+
+func killText(text, anim):
+	$CanvasLayer/killText.text = text
+	$CanvasLayer/killTextAnimator.play(anim)
