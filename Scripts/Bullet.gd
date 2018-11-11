@@ -4,6 +4,7 @@ var MOTION_SPEED = 2000
 var dropped = false
 var bulletType = "Normal"	# Bounce
 var bounces = 0
+var canKillPlayer = false
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -21,7 +22,8 @@ func _process(delta):
 			collision.collider.queue_free()
 			#pass#TODO create dropped bullet
 		elif collision.collider.is_in_group("Player"):
-			pass
+			if canKillPlayer:
+				collision.collider.playerHit()
 		elif collision.collider.is_in_group("Breakable"):
 			collision.collider.queue_free()
 		elif collision.collider.has_method("onHit"):
@@ -32,15 +34,21 @@ func _process(delta):
 				bounces += 1
 				if bounces > 3:
 					dropped = true
+					canKillPlayer = false
 				else:
 					var n = collision.normal
 					movedir = movedir.bounce(n)
 					rotation = movedir.angle()
 					move_and_slide(movedir)
+					if !canKillPlayer:
+						collision_mask = collision_mask | 2	# Adds player collision
+						canKillPlayer = true
+					
 			else:
 				dropped = true
+				canKillPlayer = false
 			#queue_free()
 		if dropped:
 			MOTION_SPEED = 0
-			collision_mask += 2	# Adds player collision
+			collision_mask = collision_mask | 2	# Adds player collision
 			collision_mask -= 4	# Removes collision with enemy 
