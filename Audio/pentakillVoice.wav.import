@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pentakillVoice.wav-962522ae0076ad2940d394ccd1732ad0.sample"
+
+[deps]
+
+source_file="res://Audio/pentakillVoice.wav"
+source_md5="58a404388fdb3dc14bdc4c5b0414ef6b"
+
+dest_files=[ "res://.import/pentakillVoice.wav-962522ae0076ad2940d394ccd1732ad0.sample" ]
+dest_md5="bbf1fb8b8bba84f2a546ae3acc0201d1"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

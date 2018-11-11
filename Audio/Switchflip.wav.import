@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Switchflip.wav-c39c4346e359b121f17ca4ad2e0b52e6.sample"
+
+[deps]
+
+source_file="res://Audio/Switchflip.wav"
+source_md5="7979978bfb0c808fe7426cf09aa29303"
+
+dest_files=[ "res://.import/Switchflip.wav-c39c4346e359b121f17ca4ad2e0b52e6.sample" ]
+dest_md5="659728a13dd512735995c2c2f9f213d5"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

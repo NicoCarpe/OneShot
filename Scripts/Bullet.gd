@@ -5,6 +5,7 @@ var dropped = false
 var bulletType = "Normal"	# Bounce
 var bounces = 0
 var canKillPlayer = false
+var kills = 0
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -20,6 +21,7 @@ func _process(delta):
 	if collision:
 		if collision.collider.is_in_group("Enemy"):
 			collision.collider.onHit()
+			kills += 1
 		elif collision.collider.is_in_group("Player"):
 			if canKillPlayer:
 				collision.collider.playerHit()
@@ -48,6 +50,15 @@ func _process(delta):
 				canKillPlayer = false
 			#queue_free()
 		if dropped:
+			if kills == 2:
+				BGMSFX.play("res://Audio/doublekillVoice.wav")
+			if kills == 3:
+				BGMSFX.play("res://Audio/triplekillVoice.wav")
+			if kills == 5:
+				BGMSFX.play("res://Audio/pentakillVoice.wav")
+			if kills >= 6:
+				BGMSFX.play("res://Audio/multikillVoice.wav")
+
 			MOTION_SPEED = 0
 			collision_mask = collision_mask | 2	# Adds player collision
 			collision_mask -= 4	# Removes collision with enemy 

@@ -44,8 +44,6 @@ func _physics_process(delta):
 	if $Control/ProgressBar.value == 100:
 		$Control/ProgressBar.hide()
 		canShoot = true
-#	speed_decay()
-	#CollisionNode.disabled = false # Reenable collision (Has to do with swap code)
 	updateCamera()
 
 func updateCamera():
@@ -106,19 +104,19 @@ func controls_loop(delta):
 			trauma = 80
 			haveBullet = false
 			canShoot = false
+			$CanvasLayer/Bullet.modulate = Color(0.2, 0.2, 0.2)
 			$PlayerAudio.stream = load("res://Audio/1Gunshot.wav")
 			#$PlayerAudio.volume_db = Global.masterSound
-			$PlayerAudio.play()
+			$PlayerAudio.playing = true
 			MOTION_SPEED = NORMAL_SPEED
 			$Control/ProgressBar.value = 0
 			var recoilDir = Vector2(1,0).rotated(get_angle_to(mousePos))
 			var motion = -recoilDir.normalized() * MOTION_SPEED*3
 			move_and_collide(motion*delta)
-		
 		else:
 			$PlayerAudio.stream = load("res://Audio/1GunshotNobullet.wav")
 			#$PlayerAudio.volume_db = Global.masterSound
-			$PlayerAudio.play()
+			$PlayerAudio.playing = true
 
 
 func movement_loop(delta):
@@ -128,6 +126,7 @@ func movement_loop(delta):
 		if collision.collider.is_in_group("Bullet"):
 			collision.collider.queue_free()
 			haveBullet = true
+			$CanvasLayer/Bullet.modulate = Color(1, 1, 1)
 			MOTION_SPEED = WITH_BULLET_SPEED
 			$Control/ProgressBar.show()
 		move_and_slide(motion)
@@ -138,8 +137,7 @@ func movement_loop(delta):
 		AnimNode.play(anim)
 
 func playerHit():
-#	BGMSFX.load
-	BGMSFX.play("playerDeath")
+	BGMSFX.play("res://Audio/PlayerDeathScream.wav")
 	get_tree().reload_current_scene()
 
 func changeBullet(_bulletType):

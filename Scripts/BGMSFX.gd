@@ -15,4 +15,5 @@ func _ready():
 #	pass
 
 func play(audio):
+	$BGMSFX.stream = load(audio)
 	$BGMSFX.play()
