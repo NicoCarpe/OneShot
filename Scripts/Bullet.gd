@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var MOTION_SPEED = 200
+var MOTION_SPEED = 2000
 var dropped = false
 var bulletType = "Normal"	# Bounce
 var bounces = 0
@@ -8,6 +8,7 @@ var bounces = 0
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+
 	pass
 
 func _process(delta):
@@ -29,18 +30,13 @@ func _process(delta):
 		else:
 			if bulletType == "Bounce":
 				bounces += 1
-				if bounces >= 3:
+				if bounces > 3:
 					dropped = true
 				else:
-					#move_and_slide(motion)
-					
 					var n = collision.normal
-					movedir = n.reflect(movedir)
-					print(movedir)
-					
-					rotation = movedir.angle()#abs(rad2deg(movedir.angle()))
-#					print(rotation)
-#					move_and_slide(movedir)
+					movedir = movedir.bounce(n)
+					rotation = movedir.angle()
+					move_and_slide(movedir)
 			else:
 				dropped = true
 			#queue_free()
