@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/water pit left-right.png-ab3e0e677c63da08a95d59d7f16d2021.stex"
+
+[deps]
+
+source_file="res://Tiles/water pit left-right.png"
+source_md5="d29c95b8513ec060f3cb7011ff2fad17"
+
+dest_files=[ "res://.import/water pit left-right.png-ab3e0e677c63da08a95d59d7f16d2021.stex" ]
+dest_md5="7ded801c9d6aee9024d74b11902c915d"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

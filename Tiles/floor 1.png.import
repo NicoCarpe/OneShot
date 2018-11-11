@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/floor 1.png-6ee119fd3282bf26b297107f1f179e74.stex"
+
+[deps]
+
+source_file="res://Tiles/floor 1.png"
+source_md5="f67117ab9b139fd488d031fb334315d2"
+
+dest_files=[ "res://.import/floor 1.png-6ee119fd3282bf26b297107f1f179e74.stex" ]
+dest_md5="bd6185ef35d9b3adcfbf8c2b4b2eb372"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

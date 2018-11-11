@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/water pit up.png-479ac06053611ac85d77b4927c9a9e0d.stex"
+
+[deps]
+
+source_file="res://Tiles/water pit up.png"
+source_md5="b0c17e7cb15a8c150ccc84e7adaca01a"
+
+dest_files=[ "res://.import/water pit up.png-479ac06053611ac85d77b4927c9a9e0d.stex" ]
+dest_md5="737b4a9ad6a4140669f626de9ad396b5"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
