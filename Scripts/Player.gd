@@ -14,7 +14,7 @@ var mousePos
 var trauma = 0
 onready var bullet = preload("res://Scenes/Bullet.tscn")
 var haveBullet = true
-
+var canShoot = true
 
 #onready var healthBar = $CanvasLayer/PlayerUI/HealthBar
 #onready var healthUpProgress = $CanvasLayer/PlayerUI/HealthUpProgress
@@ -31,7 +31,7 @@ func _ready():
 func _physics_process(delta):
 	mousePos = get_global_mouse_position()
 	#if playerControlEnabled:
-	controls_loop()
+	controls_loop(delta)
 	movement_loop(delta)
 #	speed_decay()
 	#CollisionNode.disabled = false # Reenable collision (Has to do with swap code)
@@ -54,7 +54,7 @@ func updateCamera():
 func instantCameraUpdate():
 	$Camera2D.position = (get_global_mouse_position()*0.3+global_position*0.7)
 
-func controls_loop():
+func controls_loop(delta):
 	var LEFT	= Input.is_action_pressed("ui_left")
 	var RIGHT	= Input.is_action_pressed("ui_right")
 	var UP		= Input.is_action_pressed("ui_up")
@@ -74,26 +74,30 @@ func controls_loop():
 #	elif movedir.x < 0:
 #		anim = "PlayerWalkingRight"
 #		$Sprite.flip_h = true
-	var shootAvailable = true
 	
-	if SHOOT && haveBullet:
-		var b = bullet.instance()
-		var p = get_parent()
-		p.add_child(b)
-		b.position = position
-		var mousePos = get_global_mouse_position()
-		b.rotation = get_angle_to(mousePos)
-		trauma = 80
-		haveBullet = false
-
+	if SHOOT && canShoot:
+		if haveBullet:
+			var b = bullet.instance()
+			var p = get_parent()
+			p.add_child(b)
+			b.position = position
+			var mousePos = get_global_mouse_position()
+			b.rotation = get_angle_to(mousePos)
+			trauma = 80
+			haveBullet = false
+			canShoot = false
+			$PlayerAudio.stream = load("res://Audio/1Gunshot.wav")
+			#$PlayerAudio.volume_db = Global.masterSound
+			$PlayerAudio.play()
+			bulletShootDelay(1)
+			var recoilDir = Vector2(1,0).rotated(get_angle_to(mousePos))
+			var motion = -recoilDir.normalized() * MOTION_SPEED*3
+			move_and_collide(motion*delta)
 		
-#		$PlayerAudio.stream = load("res://Audio/WarpSFX.wav")
-#		$PlayerAudio.volume_db = Global.masterSound
-#		$PlayerAudio.play()
-#
-#	mousePos = get_global_mouse_position()
-#	var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
-#	RotationNode.rotation_degrees = rad2deg(get_angle_to(mousePos))
+		else:
+			$PlayerAudio.stream = load("res://Audio/1GunshotNobullet.wav")
+			#$PlayerAudio.volume_db = Global.masterSound
+			$PlayerAudio.play()
 
 
 func movement_loop(delta):
@@ -109,14 +113,9 @@ func movement_loop(delta):
 #	if anim != animNew:
 #		animNew = anim
 #		AnimNode.play(anim)
-#	for i in range(get_slide_count()):
-#		var collisions = get_slide_collision(i)
-#		if collisions:	# Note: Causes a double hit bug where if you touch a projectile in the same frame it touches you,
-#		# you get hit twice. This can be solved through invulnerability frames after being hit.
-#			if collisions.collider.is_in_group("Projectile"):
-#				var projectile = collisions.collider #The extra .get_node("./") doesn't seem to do anything, not sure why?
-#				projectile.collide(self)
-#			if collisions.collider.is_in_group("Pickup"):
-#				var collider = collisions.collider.get_node("./")
-#				collider.applyEffect(self)
-#		pass
+
+func bulletShootDelay(sec):
+	$bulletDelayTimer.set_wait_time(sec) # Set Timer's delay to "sec" seconds
+	$bulletDelayTimer.start() # Start the Timer counting down
+	yield($bulletDelayTimer, "timeout") # Wait for the timer to wind down
+	canShoot = true
