@@ -127,6 +127,7 @@ func movement_loop(delta):
 		if collision.collider.is_in_group("Bullet"):
 			collision.collider.queue_free()
 			haveBullet = true
+		move_and_slide(motion)
 #	if movedir == Vector2():
 #		anim = "Idle"
 #	if anim != animNew:

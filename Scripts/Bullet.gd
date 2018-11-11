@@ -9,9 +9,6 @@ func _ready():
 	pass
 
 func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
 	var movedir = Vector2(1,0).rotated(rotation)
 	var motion = movedir.normalized() * MOTION_SPEED
 	var collision = move_and_collide(motion*delta)
@@ -22,6 +19,8 @@ func _process(delta):
 			#pass#TODO create dropped bullet
 		elif collision.collider.is_in_group("Player"):
 			pass
+		elif collision.collider.is_in_group("Breakable"):
+			collision.collider.queue_free()
 		else:
 			dropped = true
 			#queue_free()
