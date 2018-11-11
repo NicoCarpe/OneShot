@@ -21,4 +21,4 @@ func _on_Area2D_body_entered(body):
 		if body.haveBullet:
 			get_tree().change_scene("res://Scenes/Levels/" + level + ".tscn")
 		else:
-			print("No bullet!")
+			body.noBullet()
