@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var MOTION_SPEED = 500
+var MOTION_SPEED = 2000
 var dropped = false
 
 func _ready():

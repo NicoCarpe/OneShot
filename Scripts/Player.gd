@@ -83,7 +83,7 @@ func controls_loop():
 		b.position = position
 		var mousePos = get_global_mouse_position()
 		b.rotation = get_angle_to(mousePos)
-		trauma = 40
+		trauma = 80
 		haveBullet = false
 
 		
@@ -91,34 +91,10 @@ func controls_loop():
 #		$PlayerAudio.volume_db = Global.masterSound
 #		$PlayerAudio.play()
 #
-#	if SWAP && swapAvailable && swapUnlocked:
-#		playerPos = SpriteNode.position
-#		var space_state = get_world_2d().direct_space_state
-#		var result = space_state.intersect_ray(position, mousePos, [self], 5) # 5 refers to layer mask
-#		if result:
-#			if result.collider.is_in_group("Enemy"):
-#				swappedRecently = true
-#				swapPlaces(self, result.collider)
-#				trauma = 110
-#				$PlayerAudio.stream = load("res://Audio/ActualWarpSFX.wav")
-#				$PlayerAudio.volume_db = Global.masterSound
-#				$PlayerAudio.play()
-#				swapAvailable = false
-#				SpriteNode.set("modulate",Color(1,0.3,0.3,1))
-#				swapInvuln = true
-#				swapDelay(SWAP_DELAY)
-#				swapInvuln(swapInvulnTime)
-#				swapNotice(swapNoticeTime)
-#
 #	mousePos = get_global_mouse_position()
 #	var attackDirection = Vector2(1, 0).rotated(get_angle_to(mousePos))
 #	RotationNode.rotation_degrees = rad2deg(get_angle_to(mousePos))
-#
-#	if BARRIER and barrierAvailable && barrierUnlocked:
-#		barrierAvailable = false
-#		$RotationNode.show()
-#		$Sprite.modulate.g = 0
-#		WeaponNode.attack(attackDirection)
+
 
 func movement_loop(delta):
 	var motion = movedir.normalized() * MOTION_SPEED

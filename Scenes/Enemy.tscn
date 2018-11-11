@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Enemy" type="KinematicBody2D" groups=[
+[node name="Enemy" type="KinematicBody2D" index="0" groups=[
 "Enemy",
 ]]
 
@@ -18,7 +18,7 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
-MOTION_SPEED = 100
+MOTION_SPEED = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
