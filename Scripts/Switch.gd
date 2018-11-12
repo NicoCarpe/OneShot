@@ -17,5 +17,6 @@ func _ready():
 #	pass
 
 func _on_Switch_body_entered(body):
-	emit_signal("onHit")
-	$AudioStreamPlayer2D.play()
+	if body.is_in_group("Bullet"):
+		emit_signal("onHit")
+		$AudioStreamPlayer2D.play()

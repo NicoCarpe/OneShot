@@ -10,7 +10,7 @@ source_file="res://Audio/MainThemeVer2.wav"
 source_md5="3ceaafb8421baa72e9e8b9f2d4ddb6ba"
 
 dest_files=[ "res://.import/MainThemeVer2.wav-52a999e2ce4cf498d9e9fa71b967a603.sample" ]
-dest_md5="704e02834ff44b77c6434ff6234e7de4"
+dest_md5="faaac22d0d349db6621b1eed00358c0b"
 
 [params]
 
@@ -20,5 +20,5 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true
 edit/normalize=true
-edit/loop=false
+edit/loop=true
 compress/mode=0
