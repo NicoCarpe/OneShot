@@ -214,10 +214,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Hole" type="Sprite" parent="." index="9"]
 
-editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 189.681, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Hole" index="0"]

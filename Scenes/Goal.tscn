@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Goal.gd" type="Script" id=1]
-[ext_resource path="res://Tiles/exits.png" type="Texture" id=2]
+[ext_resource path="res://Tiles/exit 2.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -10,7 +10,6 @@ extents = Vector2( 20, 20 )
 
 [node name="Goal" type="Node2D"]
 
-z_index = -1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 level = "Level1"
@@ -22,6 +21,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -31,7 +31,7 @@ collision_layer = 0
 collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 

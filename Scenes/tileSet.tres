@@ -93,7 +93,7 @@ points = PoolVector2Array( -32, 32, 32, -32, 32, 32 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 32, 32 )
 } ]
 4/name = "Hole"
-4/texture = ExtResource( 1 )
+4/texture = ExtResource( 3 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 0, 0, 0, 1 )
 4/region = Rect2( 0, 0, 64, 64 )
