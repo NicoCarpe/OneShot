@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Gate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/PowerUp.tscn" type="PackedScene" id=7]
 
-[node name="Level" type="Node2D" index="0"]
+[node name="Level" type="Node2D"]
 
 [node name="Background" type="TileMap" parent="." index="0"]
 
@@ -98,8 +98,8 @@ bulletType = "Bounce"
 
 position = Vector2( -66.3768, -224 )
 
-[connection signal="onHit" from="Switch" to="Gate" method="_on_Switch_onHit"]
-
 [connection signal="onHit" from="Switch" to="Gate2" method="_on_Switch_onHit"]
+
+[connection signal="onHit" from="Switch" to="Gate" method="_on_Switch_onHit"]
 
 

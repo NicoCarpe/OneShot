@@ -7,10 +7,7 @@ path="res://.import/BouncingBulletsUpgrade.wav-1ffbfefbb4566f0e1ccecbcbf503e688.
 [deps]
 
 source_file="res://Audio/BouncingBulletsUpgrade.wav"
-source_md5="6c181d90bf3adfdddd692392abf89acd"
-
 dest_files=[ "res://.import/BouncingBulletsUpgrade.wav-1ffbfefbb4566f0e1ccecbcbf503e688.sample" ]
-dest_md5="30ba56babf634105a4fbaffcb01210e2"
 
 [params]
 
