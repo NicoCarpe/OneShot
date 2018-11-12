@@ -37,6 +37,7 @@ __meta__ = {
 [node name="Goal" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( -160, -736 )
+level = "EndGame"
 
 [node name="Player" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -97,8 +98,8 @@ bulletType = "Bounce"
 
 position = Vector2( -32, -224 )
 
-[connection signal="onHit" from="Switch" to="Gate" method="_on_Switch_onHit"]
-
 [connection signal="onHit" from="Switch" to="Gate2" method="_on_Switch_onHit"]
+
+[connection signal="onHit" from="Switch" to="Gate" method="_on_Switch_onHit"]
 
 
