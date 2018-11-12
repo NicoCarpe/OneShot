@@ -46,7 +46,6 @@ level = "Level7"
 [node name="PowerUp" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 864, 736 )
-_sections_unfolded = [ "Transform", "Z Index" ]
 bulletType = "Bounce"
 
 [node name="StaticBody2D" parent="." index="4" instance=ExtResource( 5 )]

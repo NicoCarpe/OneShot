@@ -18,7 +18,8 @@ func _ready():
 func _on_Switch_onHit():
 	$Particles2D.emitting = false
 	$CollisionShape2D.disabled = true
-
+	collision_mask = 0
+	collision_layer = 0
 
 func _on_Switch3_onHit():
 	pass # replace with function body
