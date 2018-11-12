@@ -67,7 +67,7 @@ func _process(delta):
 			if kills >= 6:
 				BGMSFX.stream = load("res://Audio/EvenLouderMultikill.wav")
 				player.killText("MULTIKILL!!!!!", "multikill")
-			if kills > 2:
+			if kills >= 2:
 				BGMSFX.play()
 			MOTION_SPEED = 0
 			collision_mask = collision_mask | 2	# Adds player collision
