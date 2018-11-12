@@ -7,10 +7,7 @@ path="res://.import/triplekillVoice.wav-c553a12330b11acd4af2a13c86afbed8.sample"
 [deps]
 
 source_file="res://Audio/triplekillVoice.wav"
-source_md5="f597c4cd172ad75a6950150f4f4863d2"
-
 dest_files=[ "res://.import/triplekillVoice.wav-c553a12330b11acd4af2a13c86afbed8.sample" ]
-dest_md5="df3e42d6bcba6fc0e3fa0f2964e770e8"
 
 [params]
 

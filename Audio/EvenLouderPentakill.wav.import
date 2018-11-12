@@ -7,10 +7,7 @@ path="res://.import/EvenLouderPentakill.wav-8e061608680e3fc52d9d25f93e8f2c85.sam
 [deps]
 
 source_file="res://Audio/EvenLouderPentakill.wav"
-source_md5="9cc93e428bb7babe1f36d6c597a0dc06"
-
 dest_files=[ "res://.import/EvenLouderPentakill.wav-8e061608680e3fc52d9d25f93e8f2c85.sample" ]
-dest_md5="73ed602bd738a2e7ba679d367492c9fe"
 
 [params]
 

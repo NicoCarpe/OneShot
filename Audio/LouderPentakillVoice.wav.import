@@ -7,10 +7,7 @@ path="res://.import/LouderPentakillVoice.wav-9f4a63219e24ee08cbef49405f0ace38.sa
 [deps]
 
 source_file="res://Audio/LouderPentakillVoice.wav"
-source_md5="47ca33e4f7c40e81ff882d424ae7dab7"
-
 dest_files=[ "res://.import/LouderPentakillVoice.wav-9f4a63219e24ee08cbef49405f0ace38.sample" ]
-dest_md5="d601283cbfdb4cdabbdff66f68cdd135"
 
 [params]
 

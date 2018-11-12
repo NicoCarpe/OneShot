@@ -7,10 +7,7 @@ path="res://.import/hazard 1.png-092f00bde48fc817add343ecca4eb518.stex"
 [deps]
 
 source_file="res://Tiles/hazard 1.png"
-source_md5="cf24a1d297719601233f57a9d4a9fca9"
-
 dest_files=[ "res://.import/hazard 1.png-092f00bde48fc817add343ecca4eb518.stex" ]
-dest_md5="84b4e20b352a15b9d7efa0abb3565c44"
 
 [params]
 

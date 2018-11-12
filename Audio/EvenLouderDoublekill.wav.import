@@ -7,10 +7,7 @@ path="res://.import/EvenLouderDoublekill.wav-dab77e49e5b5a203b9788a8ba05aa4aa.sa
 [deps]
 
 source_file="res://Audio/EvenLouderDoublekill.wav"
-source_md5="ae4f5e2fdb84d515bc98b2fac0c19827"
-
 dest_files=[ "res://.import/EvenLouderDoublekill.wav-dab77e49e5b5a203b9788a8ba05aa4aa.sample" ]
-dest_md5="70f8db81361bd007147fad287bd67ae1"
 
 [params]
 
