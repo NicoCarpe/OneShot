@@ -7,7 +7,10 @@ path="res://.import/LouderMultikillVoice.wav-091bf65003d2e2bc86c9284eb0282eab.sa
 [deps]
 
 source_file="res://Audio/LouderMultikillVoice.wav"
+source_md5="6a1ffb46ea2fa33ab6d495413885e752"
+
 dest_files=[ "res://.import/LouderMultikillVoice.wav-091bf65003d2e2bc86c9284eb0282eab.sample" ]
+dest_md5="e0782d9c0ebdb3aa3402931200e23a69"
 
 [params]
 

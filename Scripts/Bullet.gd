@@ -37,6 +37,8 @@ func _process(delta):
 					dropped = true
 					canKillPlayer = false
 				else:
+					$AudioStreamPlayer2D.stream = load("res://Audio/bounceSound.wav")
+					$AudioStreamPlayer2D.play()
 					var n = collision.normal
 					movedir = movedir.bounce(n)
 					rotation = movedir.angle()
@@ -49,23 +51,24 @@ func _process(delta):
 				dropped = true
 				canKillPlayer = false
 		if dropped:
-			if kills > 1:
-				BGMSFX.db = 0
+			BGMSFX.volume_db = 0
 			if kills == 2:
-				BGMSFX.play("res://Audio/EvenLouderDoublekill.wav")
+				BGMSFX.stream = load("res://Audio/EvenLouderDoublekill.wav")
 				player.killText("Double Kill!", "multikill")
 			if kills == 3:
-				BGMSFX.play("res://Audio/EvenLouderTriplekill.wav")
+				BGMSFX.stream = load("res://Audio/EvenLouderTriplekill.wav")
 				player.killText("TRIPLE KILL!", "multikill")
 			if kills == 4:
-				BGMSFX.play("res://Audio/EvenLouderQuadrakill.wav")
+				BGMSFX.stream = load("res://Audio/EvenLouderQuadrakill.wav")
 				player.killText("QUADRAKILL!", "multikill")
 			if kills == 5:
-				BGMSFX.play("res://Audio/EvenLouderPentakill.wav")
+				BGMSFX.stream = load("res://Audio/EvenLouderPentakill.wav")
 				player.killText("PENTAKILL!!!", "multikill")
 			if kills >= 6:
-				BGMSFX.play("res://Audio/EvenLouderMultikill.wav")
+				BGMSFX.stream = load("res://Audio/EvenLouderMultikill.wav")
 				player.killText("MULTIKILL!!!!!", "multikill")
+			if kills > 2:
+				BGMSFX.play()
 			MOTION_SPEED = 0
 			collision_mask = collision_mask | 2	# Adds player collision
 			collision_mask -= 4	# Removes collision with enemy 

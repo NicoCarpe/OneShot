@@ -35,4 +35,14 @@ position = Vector2( -0.885782, -0.549375 )
 scale = Vector2( 1.03851, 1.06867 )
 shape = SubResource( 1 )
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
 

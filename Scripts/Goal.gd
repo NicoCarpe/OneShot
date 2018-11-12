@@ -19,6 +19,9 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
 		if body.haveBullet:
+			BGMSFX.stream = load("res://Audio/ExitLevelSound.wav")
+			#BGMSFX.stream = load("res://Audio/ExitLevelSound.wav")
+			BGMSFX.play()
 			get_tree().change_scene("res://Scenes/Levels/" + level + ".tscn")
 		else:
 			body.noBullet()

@@ -7,7 +7,10 @@ path="res://.import/bounceSound.wav-02f6fde8537e6db6b659cf9d71d36868.sample"
 [deps]
 
 source_file="res://Audio/bounceSound.wav"
+source_md5="64c0979ea1081e5d12974c8c5a6f5f9a"
+
 dest_files=[ "res://.import/bounceSound.wav-02f6fde8537e6db6b659cf9d71d36868.sample" ]
+dest_md5="594984f9750a10781c5fef030a180192"
 
 [params]
 

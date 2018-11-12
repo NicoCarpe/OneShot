@@ -7,7 +7,10 @@ path="res://.import/LouderQuadrakillVoice.wav-100d8c6153cff09665b4e007c699f2b1.s
 [deps]
 
 source_file="res://Audio/LouderQuadrakillVoice.wav"
+source_md5="2fd9cf7c76621d3d4e9dbf9d3bf2a74d"
+
 dest_files=[ "res://.import/LouderQuadrakillVoice.wav-100d8c6153cff09665b4e007c699f2b1.sample" ]
+dest_md5="9cb26bb0040dbc20498259de89b26ab1"
 
 [params]
 
