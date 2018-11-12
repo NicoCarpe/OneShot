@@ -7,7 +7,10 @@ path="res://.import/EvenLouderTriplekill.wav-d205c36bf34b59a59a6fdd0cd9e4f05a.sa
 [deps]
 
 source_file="res://Audio/EvenLouderTriplekill.wav"
+source_md5="91785bacafc2566239f30999de6661e6"
+
 dest_files=[ "res://.import/EvenLouderTriplekill.wav-d205c36bf34b59a59a6fdd0cd9e4f05a.sample" ]
+dest_md5="63c25d45ac482dc1dab9369572df5708"
 
 [params]
 

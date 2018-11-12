@@ -66,7 +66,7 @@ func controls_loop(delta):
 	var RIGHT	= Input.is_action_pressed("ui_right")
 	var UP		= Input.is_action_pressed("ui_up")
 	var DOWN	= Input.is_action_pressed("ui_down")
-	var SHOOT	= Input.is_action_pressed("ui_shoot")
+	var SHOOT	= Input.is_action_just_pressed("ui_shoot")
 	var RESTART	= Input.is_action_pressed("ui_restart")
 	var PAUSE = Input.is_action_pressed("ui_cancel")
 
@@ -89,8 +89,8 @@ func controls_loop(delta):
 		#anim = "PlayerWalkingRight"
 		$Sprite.flip_h = true
 	
-	if SHOOT && canShoot:
-		if haveBullet:
+	if SHOOT:
+		if haveBullet && canShoot:
 			var b = bullet.instance()
 			b.bulletType = bulletType
 			var p = get_parent()
@@ -116,7 +116,6 @@ func controls_loop(delta):
 			#$PlayerAudio.volume_db = Global.masterSound
 			$PlayerAudio.playing = true
 
-
 func movement_loop(delta):
 	var motion = movedir.normalized() * MOTION_SPEED
 	var collision = move_and_collide(motion*delta)
@@ -135,7 +134,8 @@ func movement_loop(delta):
 		AnimNode.play(anim)
 
 func playerHit():
-	BGMSFX.play("res://Audio/PlayerDeathScream.wav")
+	BGMSFX.stream = load("res://Audio/PlayerDeathScream.wav")
+	BGMSFX.play()
 	get_tree().reload_current_scene()
 
 func changeBullet(_bulletType, _bulletColor):

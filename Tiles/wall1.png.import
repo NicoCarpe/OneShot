@@ -7,7 +7,10 @@ path="res://.import/wall1.png-626db8213afada80828d057b1230b01c.stex"
 [deps]
 
 source_file="res://Tiles/wall1.png"
+source_md5="aff20964a09bcf587bbbea6f58c2296c"
+
 dest_files=[ "res://.import/wall1.png-626db8213afada80828d057b1230b01c.stex" ]
+dest_md5="a751bfa34eb5e4de11221352ad9dbbd0"
 
 [params]
 

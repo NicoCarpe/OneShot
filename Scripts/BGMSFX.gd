@@ -11,8 +11,3 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
-
-func play(audio):
-	$BGMSFX.stream = load(audio)
-	$BGMSFX.volume_db = db
-	$BGMSFX.play()
