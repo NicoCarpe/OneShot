@@ -11,3 +11,6 @@ Made by:
 * Yalmaz Abdullah - Art, environment, characters
 * Nicolas Carpenter - Level design, QA and programming support
 
+![Title](https://github.com/Struckdown/OneShot/blob/master/OneShotTitleScreen.png "Title")
+
+![Gamescreen](https://github.com/Struckdown/OneShot/blob/master/OneShotGame.png "Gameplay")
