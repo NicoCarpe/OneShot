@@ -152,6 +152,8 @@ func changeBullet(_bulletType, _bulletColor):
 		bulletColor = _bulletColor
 		if haveBullet:
 			$CanvasLayer/Bullet.texture = load(bulletColor)
+		$PlayerAudio.stream = load("res://Audio/BouncingBulletsUpgrade.wav")
+		$PlayerAudio.play()
 
 func noBullet():
 	$Control/HeadText.text = "No Bullet!"

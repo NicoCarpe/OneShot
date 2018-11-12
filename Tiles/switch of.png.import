@@ -7,7 +7,10 @@ path="res://.import/switch of.png-33dbb0155b854af44e0c512017085a4a.stex"
 [deps]
 
 source_file="res://Tiles/switch of.png"
+source_md5="ab741bc462fda3fd536cfd457febc515"
+
 dest_files=[ "res://.import/switch of.png-33dbb0155b854af44e0c512017085a4a.stex" ]
+dest_md5="1e02f91787238dc2048124db4400d7eb"
 
 [params]
 

@@ -98,8 +98,8 @@ bulletType = "Bounce"
 
 position = Vector2( -66.3768, -224 )
 
-[connection signal="onHit" from="Switch" to="Gate2" method="_on_Switch_onHit"]
-
 [connection signal="onHit" from="Switch" to="Gate" method="_on_Switch_onHit"]
+
+[connection signal="onHit" from="Switch" to="Gate2" method="_on_Switch_onHit"]
 
 
