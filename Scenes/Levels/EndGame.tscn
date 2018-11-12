@@ -37,9 +37,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 425.0
+margin_left = 394.0
 margin_top = 477.0
-margin_right = 595.0
+margin_right = 607.0
 margin_bottom = 508.0
 rect_scale = Vector2( 1.5, 1.5 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -119,7 +119,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Label3" type="Label" parent="CanvasLayer" index="5"]
+[node name="Credits" type="Label" parent="CanvasLayer" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -137,9 +137,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 text = "Credits
-Boris Fleysher - Lead Programmer
-Quinlan Ede - Audio
-Yalmaz Abdullah - Art
+Boris Fleysher - Lead Programmer and Design
+Quinlan Ede - Audio, SFX, BGM (MEGAKILL!!!!)
+Yalmaz Abdullah - Art, environment, characters
 Nicolas Carpenter - Level design, QA and programming support
 
 "

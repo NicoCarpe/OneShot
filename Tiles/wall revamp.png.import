@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/floor revamp 1.png-ad139fd11e5bf4090d752d793c84552a.stex"
+path="res://.import/wall revamp.png-6d02d25ed87bf72cf581a4590db46f9f.stex"
 
 [deps]
 
-source_file="res://Tiles/floor revamp 1.png"
-source_md5="012679d8a8b256a35082597161930676"
+source_file="res://Tiles/wall revamp.png"
+source_md5="372bfca64bb45623fc2c974b219718e7"
 
-dest_files=[ "res://.import/floor revamp 1.png-ad139fd11e5bf4090d752d793c84552a.stex" ]
-dest_md5="42a2dad4a35ca5bb60ad08311ee4c9f7"
+dest_files=[ "res://.import/wall revamp.png-6d02d25ed87bf72cf581a4590db46f9f.stex" ]
+dest_md5="67c877688fe67d1974559a759f4aa250"
 
 [params]
 
