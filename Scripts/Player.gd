@@ -144,7 +144,8 @@ func changeBullet(_bulletType, _bulletColor):
 		$Control/HeadText.text = bulletType
 		$Control/TextAnimator.play("notification")
 		bulletColor = _bulletColor
-		$CanvasLayer/Bullet.modulate = bulletColor
+		if haveBullet:
+			$CanvasLayer/Bullet.modulate = bulletColor
 
 func noBullet():
 	$Control/HeadText.text = "No Bullet!"

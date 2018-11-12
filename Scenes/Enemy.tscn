@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 29, 29 )
+extents = Vector2( 32, 29.3307 )
 
 [sub_resource type="Animation" id=2]
 
@@ -150,7 +150,6 @@ shape = SubResource( 1 )
 
 stream = ExtResource( 3 )
 volume_db = 10.0
-pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0

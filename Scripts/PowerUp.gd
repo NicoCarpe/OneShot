@@ -19,6 +19,8 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
+		if bulletType == "Normal":
+			color = Color(1, 1, 1)
 		if bulletType == "Bounce":
-			color = Color(1, 0, 0)
+			color = Color(0, 1, 0)
 		body.changeBullet(bulletType, color)

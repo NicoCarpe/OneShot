@@ -7,10 +7,10 @@ path="res://.import/ExitLevelSound.wav-f977f7722669f4c40bf2f0be80c17bf9.sample"
 [deps]
 
 source_file="res://Audio/ExitLevelSound.wav"
-source_md5="43eb113547445709e8f6a237556939f7"
+source_md5="4a9286ad87502472b159a22ddcaa4f8e"
 
 dest_files=[ "res://.import/ExitLevelSound.wav-f977f7722669f4c40bf2f0be80c17bf9.sample" ]
-dest_md5="34a2055d486e0f535c87880aa2522fbf"
+dest_md5="2e8f15293b4ed3054cc9371a050e05fc"
 
 [params]
 
