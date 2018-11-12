@@ -9,7 +9,7 @@
 [ext_resource path="res://Tiles/water pit up.png" type="Texture" id=7]
 [ext_resource path="res://Tiles/water pit.png" type="Texture" id=8]
 [ext_resource path="res://Tiles/floor revamp 1.png" type="Texture" id=9]
-[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://Tiles/bounce wall.png" type="Texture" id=10]
 [ext_resource path="res://Tiles/floor 1.png" type="Texture" id=11]
 [ext_resource path="res://Tiles/floor revamp wall .png" type="Texture" id=12]
 
@@ -226,7 +226,6 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Triangle" type="Sprite" parent="." index="9"]
 
-editor/display_folded = true
 position = Vector2( 100, 0 )
 texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform" ]
