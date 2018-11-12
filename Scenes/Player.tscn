@@ -116,7 +116,7 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "Player",
 ]]
 
@@ -134,7 +134,7 @@ NORMAL_SPEED = 500
 texture = ExtResource( 2 )
 hframes = 3
 frame = 1
-_sections_unfolded = [ "Animation", "Offset" ]
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
@@ -175,6 +175,7 @@ __meta__ = {
 visible = false
 stream = ExtResource( 3 )
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0
