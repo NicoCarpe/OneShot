@@ -24,3 +24,4 @@ func _on_Area2D_body_entered(body):
 		if bulletType == "Bounce":
 			color = "res://Sprites/icons 3.png"
 		body.changeBullet(bulletType, color)
+		queue_free()

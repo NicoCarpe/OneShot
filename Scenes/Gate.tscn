@@ -10,7 +10,7 @@ extents = Vector2( 32, 32 )
 
 [node name="Gate" type="StaticBody2D"]
 
-modulate = Color( 0.398438, 0.124512, 0.124512, 1 )
+modulate = Color( 0, 255, 0.617188, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -28,5 +28,6 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
 
 
