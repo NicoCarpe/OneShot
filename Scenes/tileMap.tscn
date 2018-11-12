@@ -4,10 +4,10 @@
 [ext_resource path="res://Tiles/wall revamp.png" type="Texture" id=2]
 [ext_resource path="res://Tiles/water pit down.png" type="Texture" id=3]
 [ext_resource path="res://Tiles/water pit left-right.png" type="Texture" id=4]
-[ext_resource path="res://Tiles/water pit right.png" type="Texture" id=5]
+[ext_resource path="res://Tiles/pit right.png" type="Texture" id=5]
 [ext_resource path="res://Tiles/water pit up-down.png" type="Texture" id=6]
 [ext_resource path="res://Tiles/water pit up.png" type="Texture" id=7]
-[ext_resource path="res://Tiles/water pit.png" type="Texture" id=8]
+[ext_resource path="res://Tiles/pit.png" type="Texture" id=8]
 [ext_resource path="res://Tiles/floor revamp 1.png" type="Texture" id=9]
 [ext_resource path="res://Tiles/bounce wall.png" type="Texture" id=10]
 [ext_resource path="res://Tiles/floor 1.png" type="Texture" id=11]
@@ -126,27 +126,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 3 )
 
-[node name="Water3" type="Sprite" parent="." index="4"]
+[node name="Water7" type="Sprite" parent="." index="4"]
 
 position = Vector2( 561.255, 0.663437 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Visibility" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Water3" index="0"]
-
-visible = false
-input_pickable = false
-collision_layer = 15
-collision_mask = 15
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Water3/StaticBody2D" index="0"]
-
-shape = SubResource( 3 )
 
 [node name="Water4" type="Sprite" parent="." index="5"]
 

@@ -42,6 +42,7 @@ func _physics_process(delta):
 	if $Control/ProgressBar.value == 100:
 		$Control/ProgressBar.hide()
 		canShoot = true
+		$Control/ProgressBar.value += 1
 	updateCamera()
 
 func updateCamera():
@@ -85,9 +86,13 @@ func controls_loop(delta):
 	if movedir.x > 0:
 		#anim = "PlayerWalkingRight"
 		$Sprite.flip_h = false
+		$Sprite/Particles2D.rotation = 0
+		$Sprite/Particles2D.position.x = 15
 	elif movedir.x < 0:
 		#anim = "PlayerWalkingRight"
 		$Sprite.flip_h = true
+		$Sprite/Particles2D.rotation_degrees = 180
+		$Sprite/Particles2D.position.x = -20
 	
 	if SHOOT:
 		if haveBullet && canShoot:
@@ -102,6 +107,7 @@ func controls_loop(delta):
 			trauma = 80
 			haveBullet = false
 			canShoot = false
+			$Sprite/Particles2D.emitting = true
 			$CanvasLayer/Bullet.texture = load("res://Sprites/icons 2.png")
 			$PlayerAudio.stream = load("res://Audio/1Gunshot.wav")
 			#$PlayerAudio.volume_db = Global.masterSound
