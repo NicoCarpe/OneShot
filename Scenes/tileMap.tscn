@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Tiles/wall1.png" type="Texture" id=1]
 [ext_resource path="res://Tiles/wall 2.png" type="Texture" id=2]
@@ -8,21 +8,22 @@
 [ext_resource path="res://Tiles/water pit up-down.png" type="Texture" id=6]
 [ext_resource path="res://Tiles/water pit up.png" type="Texture" id=7]
 [ext_resource path="res://Tiles/water pit.png" type="Texture" id=8]
-[ext_resource path="res://Tiles/floor 3.png" type="Texture" id=9]
+[ext_resource path="res://Tiles/floor revamp 1.png" type="Texture" id=9]
 [ext_resource path="res://icon.png" type="Texture" id=10]
 [ext_resource path="res://Tiles/floor 1.png" type="Texture" id=11]
+[ext_resource path="res://Tiles/floor revamp wall .png" type="Texture" id=12]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
@@ -49,7 +50,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1Top/StaticBody2D" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Wall1Bot" type="Sprite" parent="." index="1"]
 
@@ -70,7 +71,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1Bot/StaticBody2D" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Water1" type="Sprite" parent="." index="2"]
 
@@ -93,7 +94,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water1/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Water2" type="Sprite" parent="." index="3"]
 
@@ -117,7 +118,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water2/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Water3" type="Sprite" parent="." index="4"]
 
@@ -139,7 +140,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water3/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Water4" type="Sprite" parent="." index="5"]
 
@@ -162,7 +163,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water4/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Water5" type="Sprite" parent="." index="6"]
 
@@ -185,7 +186,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water5/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Water6" type="Sprite" parent="." index="7"]
 
@@ -208,14 +209,14 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water6/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Floor1" type="Sprite" parent="." index="8"]
 
-position = Vector2( 283.281, 5.30739 )
+position = Vector2( 286.964, 1.62418 )
 z_index = -2
 texture = ExtResource( 9 )
-_sections_unfolded = [ "Visibility", "Z Index" ]
+_sections_unfolded = [ "Z Index" ]
 
 [node name="Triangle" type="Sprite" parent="." index="9"]
 
@@ -261,6 +262,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole/StaticBody2D" index="0"]
 
-shape = SubResource( 3 )
+shape = SubResource( 8 )
+
+[node name="Floor2" type="Sprite" parent="." index="11"]
+
+position = Vector2( 103.13, 87.1694 )
+texture = ExtResource( 12 )
 
 
