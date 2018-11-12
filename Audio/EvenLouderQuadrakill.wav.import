@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/EvenLouderQuadrakill.wav-1dbfb927eb14b5967cfef5e346ba5b45.sample"
+
+[deps]
+
+source_file="res://Audio/EvenLouderQuadrakill.wav"
+source_md5="b9b21b3575ead36a17ffb7f62a220551"
+
+dest_files=[ "res://.import/EvenLouderQuadrakill.wav-1dbfb927eb14b5967cfef5e346ba5b45.sample" ]
+dest_md5="0005eae9106204d3f9f65199e7890ff5"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

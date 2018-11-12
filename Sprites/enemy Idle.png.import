@@ -7,7 +7,10 @@ path="res://.import/enemy Idle.png-0a5a8f4bd2aa14a4cb2c7aa40d7739b9.stex"
 [deps]
 
 source_file="res://Sprites/enemy Idle.png"
+source_md5="dfa070e37f86338325ee0d803d498c65"
+
 dest_files=[ "res://.import/enemy Idle.png-0a5a8f4bd2aa14a4cb2c7aa40d7739b9.stex" ]
+dest_md5="ecf1ebd96594db7efeb6c0bdfe80162a"
 
 [params]
 

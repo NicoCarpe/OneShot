@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player Sprites/Player Sprites.png" type="Texture" id=2]
 [ext_resource path="res://Audio/1Gunshot.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 29 )
+extents = Vector2( 10, 32 )
 
 [sub_resource type="Animation" id=2]
 
@@ -28,16 +30,103 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[sub_resource type="Animation" id=3]
+
+resource_name = "notification"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("HeadText:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HeadText:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0.171875, 1, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "multikill"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("killText:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("killText:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0.992188, 0.883667, 0, 1 ), Color( 0.0740741, 0.3023, 0.986979, 1 ), Color( 0.185185, 0.868542, 0.323992, 1 ), Color( 0.697128, 0.296805, 0.296805, 1 ), Color( 0.352615, 0.611421, 0.671146, 1 ), Color( 0.431591, 0.767868, 0.523542, 1 ), Color( 0.687798, 0.722066, 0.447923, 1 ), Color( 0.921875, 0, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("killText:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 2.4, 2.4 ), Vector2( 2, 2 ), Vector2( 2.5, 2.5 ), Vector2( 2, 2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("killText:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
 
+z_index = 1
 input_pickable = false
 collision_layer = 2
 collision_mask = 5
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "collision" ]
+_sections_unfolded = [ "Collision", "Z Index", "collision" ]
 NORMAL_SPEED = 500
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
@@ -49,8 +138,8 @@ _sections_unfolded = [ "Animation", "Offset" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -6.6746, 0.231626 )
-scale = Vector2( 1.45513, 0.995549 )
+position = Vector2( -6.6746, 12.8727 )
+scale = Vector2( 1.45513, 0.634375 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
@@ -58,7 +147,7 @@ shape = SubResource( 1 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 1.3, 1.3 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -86,7 +175,6 @@ __meta__ = {
 visible = false
 stream = ExtResource( 3 )
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0
@@ -144,5 +232,202 @@ exp_edit = false
 rounded = false
 percent_visible = false
 _sections_unfolded = [ "Percent" ]
+
+[node name="HeadText" type="Label" parent="Control" index="1"]
+
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -72.0
+margin_top = -63.0
+margin_right = 19.0
+margin_bottom = -49.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Bullet Missing"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="TextAnimator" type="AnimationPlayer" parent="Control" index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/notification = SubResource( 3 )
+blend_times = [  ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Menu" type="Control" parent="CanvasLayer" index="0"]
+
+pause_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 4 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Menu" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 469.0
+margin_top = 222.0
+margin_right = 617.0
+margin_bottom = 374.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 35.0
+margin_top = 21.0
+margin_right = 113.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Pause Menu"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ResumeBUtton" type="Button" parent="CanvasLayer/Menu/Panel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 17.0
+margin_top = 58.0
+margin_right = 132.0
+margin_bottom = 85.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Resume"
+flat = false
+align = 1
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/Menu/Panel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 17.0
+margin_top = 111.0
+margin_right = 132.0
+margin_bottom = 138.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Quit"
+flat = false
+align = 1
+
+[node name="Bullet" type="Sprite" parent="CanvasLayer" index="1"]
+
+position = Vector2( 147.161, 504.762 )
+texture = ExtResource( 5 )
+
+[node name="killTextAnimator" type="AnimationPlayer" parent="CanvasLayer" index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/multikill = SubResource( 4 )
+blend_times = [  ]
+
+[node name="killText" type="Label" parent="CanvasLayer" index="3"]
+
+visible = false
+modulate = Color( 1, 1, 1, 0.666667 )
+self_modulate = Color( 0.431592, 0.767868, 0.523542, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = 472.0
+margin_top = 117.0
+margin_right = -472.0
+margin_bottom = 131.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 40, 7 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "MULTIKILL!!!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Rect", "Visibility" ]
+
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/ResumeBUtton" to="CanvasLayer/Menu" method="_on_ResumeBUtton_pressed"]
+
+[connection signal="pressed" from="CanvasLayer/Menu/Panel/QuitButton" to="CanvasLayer/Menu" method="_on_QuitButton_pressed"]
 
 

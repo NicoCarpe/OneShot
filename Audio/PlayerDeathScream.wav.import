@@ -7,7 +7,10 @@ path="res://.import/PlayerDeathScream.wav-57d4cbe6c935b8c0721ed288263b2739.sampl
 [deps]
 
 source_file="res://Audio/PlayerDeathScream.wav"
+source_md5="889ad7a12a6e2069e96fa99a6b795529"
+
 dest_files=[ "res://.import/PlayerDeathScream.wav-57d4cbe6c935b8c0721ed288263b2739.sample" ]
+dest_md5="3640971797d7159a70b65b09834fed28"
 
 [params]
 

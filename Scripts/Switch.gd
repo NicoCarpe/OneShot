@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Area2D
 
 # class member variables go here, for example:
 # var a = 2
@@ -16,6 +16,6 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func onHit():
+func _on_Switch_body_entered(body):
 	emit_signal("onHit")
 	$AudioStreamPlayer2D.play()

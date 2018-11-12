@@ -7,7 +7,10 @@ path="res://.import/exit 2.png-71456ea3ad96c1e76b1ba1b3c431be0d.stex"
 [deps]
 
 source_file="res://Tiles/exit 2.png"
+source_md5="535a6a2731efca19ecba68289421cf24"
+
 dest_files=[ "res://.import/exit 2.png-71456ea3ad96c1e76b1ba1b3c431be0d.stex" ]
+dest_md5="b7d6464f4992030881deac2c0cc1908d"
 
 [params]
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/EvenLouderMultikill.wav-38eda20297c0babee29d7f11a59e9e32.sample"
+
+[deps]
+
+source_file="res://Audio/EvenLouderMultikill.wav"
+source_md5="8d23c8fe1ad52528d13d233ea1dcc045"
+
+dest_files=[ "res://.import/EvenLouderMultikill.wav-38eda20297c0babee29d7f11a59e9e32.sample" ]
+dest_md5="078b4af9298035226ab78d65e4da505f"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

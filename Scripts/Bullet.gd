@@ -48,24 +48,23 @@ func _process(delta):
 			else:
 				dropped = true
 				canKillPlayer = false
-			#queue_free()
 		if dropped:
 			if kills > 1:
 				BGMSFX.db = 0
 			if kills == 2:
-				BGMSFX.play("res://Audio/LouderDoublekillVoice.wav")
+				BGMSFX.play("res://Audio/EvenLouderDoublekill.wav")
 				player.killText("Double Kill!", "multikill")
 			if kills == 3:
-				BGMSFX.play("res://Audio/LouderTriplekillVoice.wav")
+				BGMSFX.play("res://Audio/EvenLouderTriplekill.wav")
 				player.killText("TRIPLE KILL!", "multikill")
 			if kills == 4:
-				BGMSFX.play("res://Audio/LouderMultikillVoice.wav")
-				player.killText("MULTIKILL!", "multikill")
+				BGMSFX.play("res://Audio/EvenLouderQuadrakill.wav")
+				player.killText("QUADRAKILL!", "multikill")
 			if kills == 5:
-				BGMSFX.play("res://Audio/LouderPentakillVoice.wav")
+				BGMSFX.play("res://Audio/EvenLouderPentakill.wav")
 				player.killText("PENTAKILL!!!", "multikill")
 			if kills >= 6:
-				BGMSFX.play("res://Audio/LouderMultikillVoice.wav")
+				BGMSFX.play("res://Audio/EvenLouderMultikill.wav")
 				player.killText("MULTIKILL!!!!!", "multikill")
 			MOTION_SPEED = 0
 			collision_mask = collision_mask | 2	# Adds player collision

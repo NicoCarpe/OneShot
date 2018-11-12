@@ -7,7 +7,10 @@ path="res://.import/floor 1.png-6ee119fd3282bf26b297107f1f179e74.stex"
 [deps]
 
 source_file="res://Tiles/floor 1.png"
+source_md5="f67117ab9b139fd488d031fb334315d2"
+
 dest_files=[ "res://.import/floor 1.png-6ee119fd3282bf26b297107f1f179e74.stex" ]
+dest_md5="bd6185ef35d9b3adcfbf8c2b4b2eb372"
 
 [params]
 

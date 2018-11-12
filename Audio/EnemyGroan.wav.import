@@ -7,7 +7,10 @@ path="res://.import/EnemyGroan.wav-f7c6447d694565ae1af6abc9a0f35ff2.sample"
 [deps]
 
 source_file="res://Audio/EnemyGroan.wav"
+source_md5="92a0121bacb8ee460a110a14c7c0026e"
+
 dest_files=[ "res://.import/EnemyGroan.wav-f7c6447d694565ae1af6abc9a0f35ff2.sample" ]
+dest_md5="7bc9a5d11af1354fd406a6ae39d37b26"
 
 [params]
 

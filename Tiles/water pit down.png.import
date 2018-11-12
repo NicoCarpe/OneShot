@@ -7,7 +7,10 @@ path="res://.import/water pit down.png-5ffb9c480df0417e4e4c3999027b9076.stex"
 [deps]
 
 source_file="res://Tiles/water pit down.png"
+source_md5="84d57bd26eba68a8c3f2e45e6ac6b9a6"
+
 dest_files=[ "res://.import/water pit down.png-5ffb9c480df0417e4e4c3999027b9076.stex" ]
+dest_md5="5ffa0e6d1d4c7423363dcb7c089adfd3"
 
 [params]
 
