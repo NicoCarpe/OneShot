@@ -7,10 +7,7 @@ path="res://.import/floor revamp 1.png-ad139fd11e5bf4090d752d793c84552a.stex"
 [deps]
 
 source_file="res://Tiles/floor revamp 1.png"
-source_md5="50ad12f13af51f2d130f7cde2ff4cc05"
-
 dest_files=[ "res://.import/floor revamp 1.png-ad139fd11e5bf4090d752d793c84552a.stex" ]
-dest_md5="9be8bf831128686ed0a962d37161c247"
 
 [params]
 

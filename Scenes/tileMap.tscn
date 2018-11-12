@@ -1,32 +1,29 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Tiles/wall1.png" type="Texture" id=1]
 [ext_resource path="res://Tiles/wall 2.png" type="Texture" id=2]
-[ext_resource path="res://Tiles/wall 3.png" type="Texture" id=3]
-[ext_resource path="res://Tiles/wall 4.png" type="Texture" id=4]
-[ext_resource path="res://Tiles/wall 5.png" type="Texture" id=5]
-[ext_resource path="res://Tiles/water pit down.png" type="Texture" id=6]
-[ext_resource path="res://Tiles/water pit left-right.png" type="Texture" id=7]
-[ext_resource path="res://Tiles/water pit right.png" type="Texture" id=8]
-[ext_resource path="res://Tiles/water pit up-down.png" type="Texture" id=9]
-[ext_resource path="res://Tiles/water pit up.png" type="Texture" id=10]
-[ext_resource path="res://Tiles/water pit.png" type="Texture" id=11]
-[ext_resource path="res://Tiles/floor 3.png" type="Texture" id=12]
-[ext_resource path="res://Tiles/floor revamp wall .png" type="Texture" id=13]
-[ext_resource path="res://icon.png" type="Texture" id=14]
-[ext_resource path="res://Tiles/floor 1.png" type="Texture" id=15]
+[ext_resource path="res://Tiles/water pit down.png" type="Texture" id=3]
+[ext_resource path="res://Tiles/water pit left-right.png" type="Texture" id=4]
+[ext_resource path="res://Tiles/water pit right.png" type="Texture" id=5]
+[ext_resource path="res://Tiles/water pit up-down.png" type="Texture" id=6]
+[ext_resource path="res://Tiles/water pit up.png" type="Texture" id=7]
+[ext_resource path="res://Tiles/water pit.png" type="Texture" id=8]
+[ext_resource path="res://Tiles/floor revamp 1.png" type="Texture" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://Tiles/floor 1.png" type="Texture" id=11]
+[ext_resource path="res://Tiles/floor revamp wall .png" type="Texture" id=12]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
@@ -53,7 +50,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1Top/StaticBody2D" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Wall1Bot" type="Sprite" parent="." index="1"]
 
@@ -74,76 +71,13 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1Bot/StaticBody2D" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
-[node name="Wall1Bot2" type="Sprite" parent="." index="2"]
-
-position = Vector2( 101.497, 85.3434 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Animation" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Wall1Bot2" index="0"]
-
-visible = false
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1Bot2/StaticBody2D" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="Wall1Bot3" type="Sprite" parent="." index="3"]
-
-position = Vector2( 195.981, 85.3434 )
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Animation" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Wall1Bot3" index="0"]
-
-visible = false
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1Bot3/StaticBody2D" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="Wall1Bot4" type="Sprite" parent="." index="4"]
-
-position = Vector2( 286.391, 85.3434 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Animation" ]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Wall1Bot4" index="0"]
-
-visible = false
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1Bot4/StaticBody2D" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="Water1" type="Sprite" parent="." index="5"]
+[node name="Water1" type="Sprite" parent="." index="2"]
 
 editor/display_folded = true
 position = Vector2( 382.795, 1.32686 )
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Water1" index="0"]
@@ -160,13 +94,13 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water1/StaticBody2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 
-[node name="Water2" type="Sprite" parent="." index="6"]
+[node name="Water2" type="Sprite" parent="." index="3"]
 
 editor/display_folded = true
 position = Vector2( 469.04, 0.663437 )
-texture = ExtResource( 7 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Water2" index="0"]
@@ -184,12 +118,12 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water2/StaticBody2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 
-[node name="Water3" type="Sprite" parent="." index="7"]
+[node name="Water3" type="Sprite" parent="." index="4"]
 
 position = Vector2( 561.255, 0.663437 )
-texture = ExtResource( 8 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Water3" index="0"]
@@ -206,13 +140,13 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water3/StaticBody2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 
-[node name="Water4" type="Sprite" parent="." index="8"]
+[node name="Water4" type="Sprite" parent="." index="5"]
 
 editor/display_folded = true
 position = Vector2( 652.808, 0.663437 )
-texture = ExtResource( 9 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Water4" index="0"]
@@ -229,13 +163,13 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water4/StaticBody2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 
-[node name="Water5" type="Sprite" parent="." index="9"]
+[node name="Water5" type="Sprite" parent="." index="6"]
 
 editor/display_folded = true
 position = Vector2( 734.409, 0.663437 )
-texture = ExtResource( 10 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Water5" index="0"]
@@ -252,13 +186,13 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water5/StaticBody2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 
-[node name="Water6" type="Sprite" parent="." index="10"]
+[node name="Water6" type="Sprite" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 824.09, 0.663437 )
-texture = ExtResource( 11 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Water6" index="0"]
@@ -275,27 +209,20 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water6/StaticBody2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 
-[node name="Floor1" type="Sprite" parent="." index="11"]
+[node name="Floor1" type="Sprite" parent="." index="8"]
 
-position = Vector2( 283.281, 5.30739 )
+position = Vector2( 286.964, 1.62418 )
 z_index = -2
-texture = ExtResource( 12 )
-_sections_unfolded = [ "Visibility", "Z Index" ]
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Z Index" ]
 
-[node name="Floor2" type="Sprite" parent="." index="12"]
-
-position = Vector2( 283.281, -73.7002 )
-z_index = -2
-texture = ExtResource( 13 )
-_sections_unfolded = [ "Visibility", "Z Index" ]
-
-[node name="Triangle" type="Sprite" parent="." index="13"]
+[node name="Triangle" type="Sprite" parent="." index="9"]
 
 editor/display_folded = true
 position = Vector2( 100, 0 )
-texture = ExtResource( 14 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Triangle" index="0"]
@@ -315,11 +242,11 @@ build_mode = 0
 polygon = PoolVector2Array( -32, 32, 32, -32, 32, 32 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Hole" type="Sprite" parent="." index="14"]
+[node name="Hole" type="Sprite" parent="." index="10"]
 
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 189.681, 0 )
-texture = ExtResource( 15 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Hole" index="0"]
@@ -335,6 +262,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole/StaticBody2D" index="0"]
 
-shape = SubResource( 3 )
+shape = SubResource( 8 )
+
+[node name="Floor2" type="Sprite" parent="." index="11"]
+
+position = Vector2( 103.13, 87.1694 )
+texture = ExtResource( 12 )
 
 
