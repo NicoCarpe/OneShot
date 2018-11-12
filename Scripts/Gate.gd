@@ -16,7 +16,8 @@ func _ready():
 
 
 func _on_Switch_onHit():
-	queue_free()
+	$Particles2D.emitting = false
+	$CollisionShape2D.disabled = true
 
 
 func _on_Switch3_onHit():

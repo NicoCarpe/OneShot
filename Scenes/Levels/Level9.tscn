@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=7]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 [node name="Background" type="TileMap" parent="." index="0"]
 
@@ -62,13 +62,13 @@ bulletType = "Bounce"
 
 [node name="Gate" parent="." index="4" instance=ExtResource( 4 )]
 
-position = Vector2( -224, 224 )
-scale = Vector2( 4.5, 1 )
+position = Vector2( -380.263, 340.762 )
+scale = Vector2( 2.89481, 1 )
 
 [node name="Gate2" parent="." index="5" instance=ExtResource( 4 )]
 
-position = Vector2( -288, 820 )
-scale = Vector2( 3.25, 1.5 )
+position = Vector2( -385.595, 814.661 )
+scale = Vector2( 2.80021, 1.5 )
 
 [node name="Switch" parent="." index="6" instance=ExtResource( 5 )]
 
@@ -99,8 +99,8 @@ position = Vector2( -96, 96 )
 position = Vector2( -288, 1696 )
 level = "Level10"
 
-[connection signal="onHit" from="Switch" to="Gate" method="_on_Switch_onHit"]
-
 [connection signal="onHit" from="Switch" to="Gate2" method="_on_Switch_onHit"]
+
+[connection signal="onHit" from="Switch" to="Gate" method="_on_Switch_onHit"]
 
 

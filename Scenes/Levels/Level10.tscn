@@ -85,9 +85,9 @@ position = Vector2( 288, -160 )
 
 [node name="Gate2" parent="." index="8" instance=ExtResource( 6 )]
 
-position = Vector2( -97.5074, -65.1615 )
-scale = Vector2( 1, 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+position = Vector2( -101.776, -128.208 )
+rotation = 1.5708
+scale = Vector2( 1.80506, 0.933303 )
 
 [node name="PowerUp" parent="." index="9" instance=ExtResource( 7 )]
 
@@ -96,10 +96,10 @@ bulletType = "Bounce"
 
 [node name="Gate" parent="." index="10" instance=ExtResource( 6 )]
 
-position = Vector2( -32, -224 )
-
-[connection signal="onHit" from="Switch" to="Gate" method="_on_Switch_onHit"]
+position = Vector2( -64.5804, -227.258 )
 
 [connection signal="onHit" from="Switch" to="Gate2" method="_on_Switch_onHit"]
+
+[connection signal="onHit" from="Switch" to="Gate" method="_on_Switch_onHit"]
 
 
