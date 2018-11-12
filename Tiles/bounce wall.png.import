@@ -7,7 +7,10 @@ path="res://.import/bounce wall.png-abe8a4d61ab09882e1276c7c437d53be.stex"
 [deps]
 
 source_file="res://Tiles/bounce wall.png"
+source_md5="225a1eeaf79969e33805cd3485939b3b"
+
 dest_files=[ "res://.import/bounce wall.png-abe8a4d61ab09882e1276c7c437d53be.stex" ]
+dest_md5="3c4f821d435e58b91037dd65ace7f263"
 
 [params]
 

@@ -7,7 +7,10 @@ path="res://.import/pit.png-b88d6b6b2b383b5af0e8ac159b63a3ec.stex"
 [deps]
 
 source_file="res://Tiles/pit.png"
+source_md5="c138d770fe6985cc73d056ca2c34f918"
+
 dest_files=[ "res://.import/pit.png-b88d6b6b2b383b5af0e8ac159b63a3ec.stex" ]
+dest_md5="a843b29021dbb420292172cbb514b533"
 
 [params]
 

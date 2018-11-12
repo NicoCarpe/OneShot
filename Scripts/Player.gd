@@ -8,7 +8,7 @@ onready var AnimNode = get_node("AnimationPlayer")
 #onready var WeaponNode = get_node("RotationNode/WeaponSwing")
 #onready var RotationNode = get_node("RotationNode")
 var movedir = Vector2(0,0)
-var bulletColor = Color(1, 1, 1)
+var bulletColor = "res://Sprites/icons 1.png"
 var CollisionNode
 var playerPos
 var mousePos
@@ -102,7 +102,7 @@ func controls_loop(delta):
 			trauma = 80
 			haveBullet = false
 			canShoot = false
-			$CanvasLayer/Bullet.modulate = Color(0.2, 0.2, 0.2)
+			$CanvasLayer/Bullet.texture = load("res://Sprites/icons 2.png")
 			$PlayerAudio.stream = load("res://Audio/1Gunshot.wav")
 			#$PlayerAudio.volume_db = Global.masterSound
 			$PlayerAudio.playing = true
@@ -123,7 +123,7 @@ func movement_loop(delta):
 		if collision.collider.is_in_group("Bullet"):
 			collision.collider.queue_free()
 			haveBullet = true
-			$CanvasLayer/Bullet.modulate = bulletColor
+			$CanvasLayer/Bullet.texture = load(bulletColor)
 			MOTION_SPEED = WITH_BULLET_SPEED
 			$Control/ProgressBar.show()
 		move_and_slide(motion)
@@ -145,7 +145,7 @@ func changeBullet(_bulletType, _bulletColor):
 		$Control/TextAnimator.play("notification")
 		bulletColor = _bulletColor
 		if haveBullet:
-			$CanvasLayer/Bullet.modulate = bulletColor
+			$CanvasLayer/Bullet.texture = load(bulletColor)
 
 func noBullet():
 	$Control/HeadText.text = "No Bullet!"

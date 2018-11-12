@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hazard revamp.png-847a85b1ac9b7c9709b3bbd1df72b417.stex"
+path="res://.import/icons 2.png-079582eb99e623c4d0b55cc62fd7ca53.stex"
 
 [deps]
 
-source_file="res://Tiles/hazard revamp.png"
-source_md5="5a05340b03da9bd93b871b9da46a5ece"
+source_file="res://Sprites/icons 2.png"
+source_md5="0516dfb81770db245624c445ba6df35c"
 
-dest_files=[ "res://.import/hazard revamp.png-847a85b1ac9b7c9709b3bbd1df72b417.stex" ]
-dest_md5="4f9e3ae9c88e2d208faf018ffc0806d9"
+dest_files=[ "res://.import/icons 2.png-079582eb99e623c4d0b55cc62fd7ca53.stex" ]
+dest_md5="ee5321eab34a6fe8af000ecc90dec713"
 
 [params]
 
