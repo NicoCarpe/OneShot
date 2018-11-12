@@ -13,12 +13,12 @@
 [ext_resource path="res://Tiles/floor 1.png" type="Texture" id=11]
 [ext_resource path="res://Tiles/floor revamp wall .png" type="Texture" id=12]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
@@ -28,7 +28,7 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
@@ -54,7 +54,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1Top/StaticBody2D" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="Wall1Bot" type="Sprite" parent="." index="1"]
 
@@ -76,7 +76,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1Bot/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Water1" type="Sprite" parent="." index="2"]
@@ -268,7 +268,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole/StaticBody2D" index="0"]
 
-shape = SubResource( 9 )
+shape = SubResource( 4 )
 
 [node name="Floor2" type="Sprite" parent="." index="11"]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemyWalk 1.png-ff5fe57c92a6324b67c71cc128dec6f1.stex"
+path="res://.import/pit.png-b88d6b6b2b383b5af0e8ac159b63a3ec.stex"
 
 [deps]
 
-source_file="res://Sprites/enemyWalk 1.png"
-dest_files=[ "res://.import/enemyWalk 1.png-ff5fe57c92a6324b67c71cc128dec6f1.stex" ]
+source_file="res://Tiles/pit.png"
+dest_files=[ "res://.import/pit.png-b88d6b6b2b383b5af0e8ac159b63a3ec.stex" ]
 
 [params]
 

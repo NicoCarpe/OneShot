@@ -8,6 +8,8 @@
 [ext_resource path="res://Sprites/enemyWalk 3.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/enemyWalk 4.png" type="Texture" id=7]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0

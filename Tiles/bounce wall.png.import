@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemyWalk 1.png-ff5fe57c92a6324b67c71cc128dec6f1.stex"
+path="res://.import/bounce wall.png-abe8a4d61ab09882e1276c7c437d53be.stex"
 
 [deps]
 
-source_file="res://Sprites/enemyWalk 1.png"
-dest_files=[ "res://.import/enemyWalk 1.png-ff5fe57c92a6324b67c71cc128dec6f1.stex" ]
+source_file="res://Tiles/bounce wall.png"
+dest_files=[ "res://.import/bounce wall.png-abe8a4d61ab09882e1276c7c437d53be.stex" ]
 
 [params]
 
