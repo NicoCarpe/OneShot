@@ -7,10 +7,7 @@ path="res://.import/icons 1.png-73ce49e576b34a0891207e65f33b363a.stex"
 [deps]
 
 source_file="res://Sprites/icons 1.png"
-source_md5="08bd1b6115c98691a2efe3d06437748f"
-
 dest_files=[ "res://.import/icons 1.png-73ce49e576b34a0891207e65f33b363a.stex" ]
-dest_md5="0c0e07ff5155aaab66dcbe0fe69ff0c7"
 
 [params]
 
