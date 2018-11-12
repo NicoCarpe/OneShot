@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/doublekillVoice.wav-85b582ab4931219be750c339283a82c9.sample"
+
+[deps]
+
+source_file="res://Audio/doublekillVoice.wav"
+source_md5="f46f00cf6e0c7bd068269ee97a1f66cd"
+
+dest_files=[ "res://.import/doublekillVoice.wav-85b582ab4931219be750c339283a82c9.sample" ]
+dest_md5="0c25ff857b775594b132f1dbbb28f0a2"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

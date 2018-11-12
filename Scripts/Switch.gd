@@ -18,3 +18,4 @@ func _ready():
 
 func onHit():
 	emit_signal("onHit")
+	$AudioStreamPlayer2D.play()

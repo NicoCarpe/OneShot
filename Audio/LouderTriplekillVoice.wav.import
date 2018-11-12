@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LouderTriplekillVoice.wav-80b45aa2c80a55a539994cd117ed0575.sample"
+
+[deps]
+
+source_file="res://Audio/LouderTriplekillVoice.wav"
+source_md5="bec4319bb4edd5397c75f365c13c10ae"
+
+dest_files=[ "res://.import/LouderTriplekillVoice.wav-80b45aa2c80a55a539994cd117ed0575.sample" ]
+dest_md5="4058c0fa3da0d7bbe04d8dfa64f057fb"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -8,6 +8,7 @@ onready var AnimNode = get_node("AnimationPlayer")
 #onready var WeaponNode = get_node("RotationNode/WeaponSwing")
 #onready var RotationNode = get_node("RotationNode")
 var movedir = Vector2(0,0)
+var bulletColor = Color(1, 1, 1)
 var CollisionNode
 var playerPos
 var mousePos
@@ -19,9 +20,6 @@ var canShoot = true
 var anim
 var animNew
 var bulletType = "Normal"
-
-#onready var healthBar = $CanvasLayer/PlayerUI/HealthBar
-#onready var healthUpProgress = $CanvasLayer/PlayerUI/HealthUpProgress
 
 func _ready():
 	set_physics_process(true)
@@ -44,8 +42,6 @@ func _physics_process(delta):
 	if $Control/ProgressBar.value == 100:
 		$Control/ProgressBar.hide()
 		canShoot = true
-#	speed_decay()
-	#CollisionNode.disabled = false # Reenable collision (Has to do with swap code)
 	updateCamera()
 
 func updateCamera():
@@ -72,7 +68,11 @@ func controls_loop(delta):
 	var DOWN	= Input.is_action_pressed("ui_down")
 	var SHOOT	= Input.is_action_pressed("ui_shoot")
 	var RESTART	= Input.is_action_pressed("ui_restart")
+	var PAUSE = Input.is_action_pressed("ui_cancel")
 
+	if PAUSE:
+		$CanvasLayer/Menu/Panel.show()
+		get_tree().paused = true
 	if RESTART:
 		get_tree().reload_current_scene()
 	movedir.x = -int(LEFT) + int(RIGHT)
@@ -102,19 +102,19 @@ func controls_loop(delta):
 			trauma = 80
 			haveBullet = false
 			canShoot = false
+			$CanvasLayer/Bullet.modulate = Color(0.2, 0.2, 0.2)
 			$PlayerAudio.stream = load("res://Audio/1Gunshot.wav")
 			#$PlayerAudio.volume_db = Global.masterSound
-			$PlayerAudio.play()
+			$PlayerAudio.playing = true
 			MOTION_SPEED = NORMAL_SPEED
 			$Control/ProgressBar.value = 0
 			var recoilDir = Vector2(1,0).rotated(get_angle_to(mousePos))
 			var motion = -recoilDir.normalized() * MOTION_SPEED*3
 			move_and_collide(motion*delta)
-		
 		else:
 			$PlayerAudio.stream = load("res://Audio/1GunshotNobullet.wav")
 			#$PlayerAudio.volume_db = Global.masterSound
-			$PlayerAudio.play()
+			$PlayerAudio.playing = true
 
 
 func movement_loop(delta):
@@ -124,6 +124,7 @@ func movement_loop(delta):
 		if collision.collider.is_in_group("Bullet"):
 			collision.collider.queue_free()
 			haveBullet = true
+			$CanvasLayer/Bullet.modulate = bulletColor
 			MOTION_SPEED = WITH_BULLET_SPEED
 			$Control/ProgressBar.show()
 		move_and_slide(motion)
@@ -134,17 +135,21 @@ func movement_loop(delta):
 		AnimNode.play(anim)
 
 func playerHit():
-#	BGMSFX.load
-	BGMSFX.play("playerDeath")
+	BGMSFX.play("res://Audio/PlayerDeathScream.wav")
 	get_tree().reload_current_scene()
 
-func changeBullet(_bulletType):
+func changeBullet(_bulletType, _bulletColor):
 	if bulletType != _bulletType:
 		bulletType = _bulletType
 		$Control/HeadText.text = bulletType
 		$Control/TextAnimator.play("notification")
+		bulletColor = _bulletColor
+		$CanvasLayer/Bullet.modulate = bulletColor
 
 func noBullet():
 	$Control/HeadText.text = "No Bullet!"
 	$Control/TextAnimator.play("notification")
-	
+
+func killText(text, anim):
+	$CanvasLayer/killText.text = text
+	$CanvasLayer/killTextAnimator.play(anim)

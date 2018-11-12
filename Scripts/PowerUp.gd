@@ -4,6 +4,7 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 export (String, "Normal", "Bounce") var bulletType
+var color = Color(1, 1, 1)
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -18,4 +19,6 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
-		body.changeBullet(bulletType)
+		if bulletType == "Bounce":
+			color = Color(1, 0, 0)
+		body.changeBullet(bulletType, color)
